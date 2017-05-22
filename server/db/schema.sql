@@ -23,7 +23,7 @@ create table boards (
     user_id integer,
     foreign key (user_id) references users(id),
     name varchar(50),
-    desc varchar(100),
+    description varchar(100),
     pincount integer
 );
 

@@ -9,7 +9,7 @@ var app = module.exports = express();
 
 app.use(bodyParser.json());
 app.use(cors());
-app.use(express.static(path.join(__dirname, '/..//')));
+app.use(express.static(path.join(__dirname, '/../public/')));
 
 var conn = massive.connectSync({
   connectionString : server.serverURL
@@ -18,13 +18,6 @@ var conn = massive.connectSync({
 app.set('db', conn);
 var ctrl = require('./serverCtrl.js')
 var db = app.get('db');
-
-
-
-// app.post("/createtemple", ctrl.create_temple);
-// app.get('/get/temples', ctrl.getTemples);
-// app.put('/api/updatewater', ctrl.updateWater);
-// app.delete('/deletetemples/:id', ctrl.deletetemples);
 
 
 

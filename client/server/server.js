@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 var express = require('express');
 var bodyParser = require('body-parser');
 var cors = require('cors');
@@ -22,10 +22,7 @@ var db = app.get('db');
 
 
 
-// app.post("/createtemple", ctrl.create_temple);
-// app.get('/get/temples', ctrl.getTemples);
-// app.put('/api/updatewater', ctrl.updateWater);
-// app.delete('/deletetemples/:id', ctrl.deletetemples);
+
 
 
 
@@ -34,6 +31,3 @@ var port = 3030;
 app.listen(port, function() {
   console.log("Started server on port", port);
 });
-=======
-var test = "test";
->>>>>>> aecdfd1ebf3ee67e29443a9107737120fc58775f

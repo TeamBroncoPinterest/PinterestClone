@@ -26,6 +26,3 @@ class Nav extends Component {
 }
 
 export default Nav;
-
-
-// https://api.pinterest.com/oauth/?response_type=code&redirect_uri=http://localhost/&client_id=4901570145085834798&scope=read_public&state=768uyFys

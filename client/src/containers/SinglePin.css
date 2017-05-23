@@ -1,13 +1,18 @@
 /*SINGLE PIN*/
-
+p {
+  margin: 0;
+}
 .single-pin-outer-container {
-  margin: 20px 4px;
+  margin: 15px 2px;
+  /*float: left;
+  margin-left: 15px;*/
   background: #FFFFFF;
   width: 256px;
   height: auto;
   padding: 10px;
   border-radius: 8px;
   cursor: zoom-in;
+  display: inline-block;
 }
 .single-pin-outer-container:hover {
   background: #EEEEEE;

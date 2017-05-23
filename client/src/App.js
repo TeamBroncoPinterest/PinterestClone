@@ -1,42 +1,51 @@
 import React, { Component } from 'react';
 import { HashRouter as Router, Route } from 'react-router-dom';
-import logo from './logo.svg';
+import { connect } from 'react-redux';
+
+
 import './App.css';
+import config from './config'
+import { getFeed } from './actions/feedActions';
 
-import SinglePin from './containers/SinglePin';
-
-
-
+// Routes
+import Nav from './containers/Nav';
+import Login from './containers/Login';
+import Feed from './containers/Feed';
+import Profile from './containers/Profile';
 
 
 class App extends Component {
+  componentWillMount() {
+    window.PDK.init({
+        appId: config.Pinterest.ID,
+        cookie: true
+    });
+    this.props.getFeed();
+  }
+
+
   render() {
-    // const feed = this.props.feed.map( () => {
-    //   return <SinglePin />
-    // })
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
+      <Router>
+        <div>
+          <Nav />
+          <div>
+            <Route path='/login' component={Login} />
+            <Route path='/' exact={true} component={Feed} />
+            <Route path='/profile' component={Profile} />
+          </div>
         </div>
-        <div className="feed">
-          <SinglePin />
-          <SinglePin />
-          <SinglePin />
-          <SinglePin />
-          <SinglePin />
-          <SinglePin />
-          <SinglePin />
-          <SinglePin />
-          <SinglePin />
-          <SinglePin />
-          <SinglePin />
-          <SinglePin />
-        </div>
-      </div>
+      </Router>
     );
   }
 }
 
+
+function mapStateToProps(store) {
+  return {
+    feed: store.feed,
+  }
+}
+
+App = connect(mapStateToProps, { getFeed })(App)
 export default App;

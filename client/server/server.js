@@ -15,10 +15,10 @@ var conn = massive.connectSync({
   connectionString : server.serverURL
 });
 
-app.set('db', conn);
+app.set('db', conn, );
+
 var ctrl = require('./serverCtrl.js')
 var db = app.get('db');
-
 
 app.post('/api/create_user', ctrl.createuser);
 app.put('./api/update_user', ctrl.updateuser);
@@ -36,12 +36,8 @@ app.post('./api/create_board_pin', ctrl.createboardpin);
 app.get('./api/get_board_pin', ctrl.getboardpin);
 app.delete('./api/delete_board_pin', ctrl.deleteboardpin);
 
-
-
-
-
-
 var port = 3030;
 app.listen(port, function() {
   console.log("Started server on port", port);
 }); 
+

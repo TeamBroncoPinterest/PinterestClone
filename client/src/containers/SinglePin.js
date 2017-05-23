@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { createUser } from '../actions/userActions';
+
+
+import './SinglePin.css';
+
 
 class SinglePin extends Component {
 
   render() {
-    // const currentUser = this.props.currentUser;
-    // this.props.createUser(email, password);
     return (
       <div className="single-pin-outer-container">
         <div className="single-pin-inner-container">
@@ -40,11 +40,7 @@ class SinglePin extends Component {
   }
 }
 
-function mapStateToProps(store) {
-  return {
-    currentUser: store.user.currentUser
-  }
-}
 
 
-export default connect(mapStateToProps, { createUser })(SinglePin);
+
+export default SinglePin;

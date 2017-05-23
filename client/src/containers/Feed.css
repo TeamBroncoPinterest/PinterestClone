@@ -1,7 +1,17 @@
+.feedWrapper {
+    width: 87.5%;
+    margin: auto;
+}
 .feed {
-  width: 100%;
-  display: flex;
+  /*display: flex;
   flex-direction: row;
-  justify-content: center;
+  flex-wrap: wrap;*/
+  /*justify-content: center;*/
   margin: auto;
+  display: block;
+  /*column-fill: auto;*/
+  column-rule-width: 1px;
+  /*column-count: 4;*/
+  column-gap: 10px;
+  column-width: 256px;
 }

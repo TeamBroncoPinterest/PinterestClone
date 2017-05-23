@@ -5,7 +5,6 @@ create table userlogin (
 
 );
 
-
 create table users (
     id serial primary key, 
     username varchar(50),
@@ -32,7 +31,6 @@ create table pins (
     link varchar(100),
     pinterest_id varchar (50),
     metadata varchar(3000),
-    note varchar(100),
     counts varchar(100),
     imageurl varchar(250)
 );

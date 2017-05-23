@@ -1,0 +1,1 @@
+INSERT INTO boards (user_id, name, description);

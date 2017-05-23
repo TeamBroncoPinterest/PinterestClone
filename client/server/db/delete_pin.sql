@@ -1,0 +1,1 @@
+DELETE FROM pins WHERE pins = $1;

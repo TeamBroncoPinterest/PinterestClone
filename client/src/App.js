@@ -17,14 +17,16 @@ import Profile from './containers/Profile';
 class App extends Component {
   componentWillMount() {
     window.PDK.init({
-        appId: config.Pinterest.ID,
+        appId: 4901570145085834798,
         cookie: true
     });
+    // window.PDK.login({ scope : 'read_public'})
     this.props.getFeed();
   }
 
 
   render() {
+    console.log(this.props);
     return (
       <Router>
         <div>

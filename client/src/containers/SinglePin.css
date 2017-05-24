@@ -2,12 +2,13 @@
 p {
   margin: 0;
 }
+.single-pin-shell {
+  margin: 0px 2px 30px 2px;
+  width: 236px;
+}
 .single-pin-outer-container {
-  margin: 15px 2px;
-  /*float: left;
-  margin-left: 15px;*/
   background: #FFFFFF;
-  width: 256px;
+  width: 100%;
   height: auto;
   padding: 10px;
   border-radius: 8px;
@@ -53,11 +54,15 @@ p {
   left: 0;
   right: 0;
   top: 0;
+  width: 100%;
+  /*height: 100%;*/
   background-color: RGBA(0, 0, 0, 0.15);
   border-radius: 8px;
   position: absolute;
   -webkit-transition: opacity .04s linear;
   transition: opacity .04s linear;
+  z-index: 4;
+  cursor: zoom-in;
 }
 .single-pin-outer-container:hover .dimGradient {
   background-color: black;
@@ -70,6 +75,7 @@ p {
   left: 0;
   position: absolute;
   right: 0;
+  z-index: 6;
 }
 .dimGradient p {
   font-weight: lighter;
@@ -91,7 +97,7 @@ p {
   font-size: 14px;
   align-items: center;
   cursor: pointer;
-  z-index: 2;
+  z-index: 5;
 }
 .single-pin-save-pin {
   width: 12px;

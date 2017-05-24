@@ -4,9 +4,7 @@ import { connect } from 'react-redux';
 
 
 import './App.css';
-import config from './config'
 import { getFeed } from './actions/feedActions';
-import axios from 'axios';
 
 // Routes
 import Nav from './containers/Nav';
@@ -21,19 +19,12 @@ class App extends Component {
         appId: 4901570145085834798,
         cookie: true
     });
-<<<<<<< HEAD
     // window.PDK.login({ scope : 'read_public'})
-=======
-    // window.PDK.login({ scope : 'read_public' }, (response) => {
-    //   console.log(response);
-    // });
->>>>>>> master
     this.props.getFeed();
   }
 
 
   render() {
-    console.log(this.props);
     return (
       <Router>
         <div>

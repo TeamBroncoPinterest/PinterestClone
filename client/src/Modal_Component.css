@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400');
 
 .ModalBoard_wrapper {
   width: 100%;
@@ -11,7 +11,7 @@
 .ModalBoard_Box {
   width: auto;
   max-width:600px;
-  height:173.33px;
+  height: 265px;
   background-color: #ffffff;
   position: fixed;
     top: 0;
@@ -28,23 +28,39 @@
 
 .ModalBoard_TopBox {
  max- height: 54.11px;
-  color: #333;
-   font-size: 20px;
-  font-family: 'Open Sans', sans-serif;
+  border-bottom: 1px solid #dfdfdf;
 }
 
-.CreateBoard_SecondBox {
+.Modal_title {
+   font-size: 20px;
+  font-family: 'Open Sans', sans-serif;
+   color: #333;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.ModalBoard_X {
+  height: 12px;
+  width: 12px;
+  background: url(https://s.pinimg.com/webapp/style/images/webapp-common-main-1x-c20ceaff.png) -261px -242px no-repeat;
+  float: right;
+  margin: -6px;
+    position: absolute;
+    right: 26px;
+    top: 33px;
+}
+
+.CreateBoard_CreateBroard  {
   height: 62.11 px;
   font-size:16px;
   font-family: 'Open Sans', sans-serif;
-   border-top: 1px solid #dfdfdf;
 
 }
 
 
 
 .CreateBoard_Name{
-  color: #565656;
+  color: #5e5e5e;
   float:left;
   width: 140px;
 
@@ -62,11 +78,17 @@
     border-radius: 3px;
     border: 1px solid #d6d3ce;
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.12) inset;
-    color: #333;
+    color: #5e5e5e;
     font-size: 14px;
+    font-family: 'Open Sans', sans-serif;
     padding: 7px;
     margin-top: 20px;
     margin-bottom: 20px;
+}
+
+
+.CreateBoard_Input:focus {
+     background-color: #ffffff;
 }
 
 
@@ -79,13 +101,13 @@
 
 .Buttons_Component {
   height: 37 px;
-  font-size:16px;
   font-family: 'Open Sans', sans-serif;
   float: right;
 }
 
 .create_button{
   color: #fff;
+  font-size: 16px;
   background-color: #bd081c;
    border: none;
     border-radius: 4px;
@@ -97,7 +119,8 @@
 }
 
 .cancel_button{
-  color: #565656;
+  color: #5e5e5e;
+  font-size: 16px;
   background-color: #efefef;
    border: none;
     border-radius: 4px;

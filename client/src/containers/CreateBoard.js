@@ -1,13 +1,13 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Modal_Component from "./Modal_Component"
-
+import './Modal_Component.css'
 
 class CreateBoard extends Component {
 
   render() {
     return (
 
-        <Modal_Component title="Create board">
+        <Modal_Component closeWindow={() => this.props.closeWindow()} title="Create board">
 
           <div  className="CreateBoard_CreateBoard">
             <h5 className="CreateBoard_Name">Name</h5>

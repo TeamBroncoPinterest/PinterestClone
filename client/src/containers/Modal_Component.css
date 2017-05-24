@@ -3,21 +3,24 @@
 .ModalBoard_wrapper {
   width: 100%;
   height: 100vh;
-  background-color: rgba(226, 228, 228, 0.9);
+  background-color: rgba(0, 0, 0, 0.6);
   opacity: 1;
   font-family: 'Open Sans', sans-serif;
-}
-
-.ModalBoard_Box {
-  width: auto;
-  max-width:600px;
-  height: 265px;
-  background-color: #ffffff;
+  z-index: 751;
   position: fixed;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ModalBoard_Box {
+  width: 600px;
+  background-color: #ffffff;
+  position: fixed;
   border-radius: 6px;
   margin:  auto;
   padding-left: 20px;
@@ -51,7 +54,7 @@
 }
 
 .CreateBoard_CreateBroard  {
-  height: 62.11 px;
+  height: 62.11px;
   font-size:16px;
   font-family: 'Open Sans', sans-serif;
 
@@ -93,14 +96,14 @@
 
 
 .ModalBoard_ButtonBox {
-  height: 57.44 px;
+  height: 57.44px;
   font-size:16px;
   font-family: 'Open Sans', sans-serif;
 
 }
 
 .Buttons_Component {
-  height: 37 px;
+  height: 37px;
   font-family: 'Open Sans', sans-serif;
   float: right;
 }
@@ -132,18 +135,19 @@
 
 }
 
-.CreateBoard_cancel_button:hover {
+.cancel_button:hover {
   background-color: #dbdbdb;
 }
 
-.CreateBoard_create_button:hover {
+.create_button:hover {
   background-color: #a30718;
 }
 
 
 @media (max-width: 600px) {
-.ModalBoard_Box {
-  width: auto;
-  max-width:600px;
-  height:250px;
+  .ModalBoard_Box {
+    width: auto;
+    max-width:600px;
+    height:250px;
+  }
 }

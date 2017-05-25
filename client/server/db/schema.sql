@@ -1,47 +1,54 @@
-create table userlogin (
-    id serial,
-    username varchar(50) primary key not null,
+CREATE TABLE userlogin (
+    id serial primary key,
+    username varchar(50) not null,
     password varchar(50) not null
-
 );
 
-create table users (
-    id serial primary key, 
-    username varchar(50),
-    foreign key (username) references userlogin(username), 
+CREATE TABLE users (
+    id serial primary key,
+    user_id integer references userlogin(id),
     first varchar(50), 
     last varchar(50), 
-    bio varchar(250), 
+    bio varchar(250) default 'I love pinterest.', 
     pincount integer, 
     boardcount integer,
-    img varchar(100) default './pics/blank-profile.png'
+    img varchar(100) default  'https://www.westdean.org.uk/images/profile-placeholder.jpg',
+    boards JSON default '[]'
 );
 
-create table boards (
+CREATE TABLE boards (
     id serial primary key,
-    user_id integer,
-    foreign key (user_id) references users(id),
+    user_id int references userlogin(id),
     name varchar(50),
     description varchar(100),
+    pins JSON, 
     pincount integer
 );
 
-create table pins (
+CREATE TABLE pins (
     id serial primary key,
     link varchar(100),
-    pinterest_id varchar (50),
+    pinterest_id varchar(50),
     metadata varchar(3000),
     counts varchar(100),
     imageurl varchar(250)
 );
 
-create table boards_pins (
-    id serial primary key,
-    pin_id integer,
-    foreign key (pin_id) references pins(id),
-    board_id integer,
-    foreign key (board_id) references boards(id)
-);
+INSERT INTO userlogin (username, password)
+VALUES ('kaleigh', 'password');
+
+INSERT INTO pins (link, pinterest_id, metadata, counts, imageurl)
+VALUES ('http://www.wifemamafoodie.com/berry-brownie-pizza/', 12345, 'asdasjdklf;alskdjfl', 1, 'https://i1.wp.com/www.wifemamafoodie.com/wp-content/uploads/2016/06/brownie-pizza-with-fruit-and-flowers-1.jpg?resize=683%2C1024');
+
+INSERT INTO users (user_id, first, last, pincount, boardcount)
+VALUES (1, 'Kaleigh', 'Niemela', 1, 1);
+
+INSERT INTO boards (user_id, name, description, pincount)
+VALUES (1, 'Food', 'Food I want to make', 1);
+
+
+
+
 
 
 

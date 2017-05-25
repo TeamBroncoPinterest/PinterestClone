@@ -1,1 +1,0 @@
-INSERT INTO pins (link, pinterest_id, metadata);

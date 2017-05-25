@@ -1,2 +1,2 @@
 SELECT * FROM pins
-WHERE pins = $1;
+    WHERE id = $1;

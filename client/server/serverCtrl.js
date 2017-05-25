@@ -2,29 +2,81 @@ var app = require("./server");
 var db = app.get('db');
 
 module.exports = {
+
+    validatelogin: function (req, res) {
+        const username = req.body.username;
+        const password = req.body.password;
+        db.validate_user_login([username, password], function (err, response) {
+            if (!err && response[0] !== undefined) {
+                const id = response[0].id;
+                db.get_user([id], function (err, response) {
+                    if (err) {
+                        console.log(err)
+                        res.send(err);
+                    } else {
+                        console.log(response)
+                        res.status(200).send(response);
+                    }
+                })
+            } else {
+                res.send(err);
+            }
+        })
+    },
+
     createuser: function (req, res) {
         let username = req.body.username;
+        let password = req.body.password;
         let first = req.body.first;
         let last = req.body.last;
-        let bio = req.body.bio;
-        let img = req.body.img;
-        db.create_user([username, first, last, bio, img], function (err, response) {
-            if (err) {
-                res.send(err);
+
+        db.validate_username([username], function (err, response) {
+            if (!err && response[0] === undefined) {
+                db.create_user_login([username, password], function (err) {
+                    if (!err) {
+                        db.get_id([username], function (err, response) {
+                            console.log(response)
+                            if (!err) {
+                                const id = response[0].id
+                                db.create_user([id, first, last], function (err) {
+                                    if (err) {
+                                        res.send(err);
+                                    } else {
+                                        db.get_user([id], function (err, response) {
+                                            if (err) {
+                                                console.log(err)
+                                                res.send(err);
+                                            } else {
+                                                console.log(response)
+                                                res.status(200).send(response);
+                                            }
+                                        })
+                                    }
+                                })
+                            } else {
+                                res.send(err);
+                            }
+                        })
+                    } else {
+                        res.send(err);
+                    }
+                })
+
+
             } else {
-                res.status(200).send(response);
+                res.send(err);
             }
         })
     },
 
     updateuser: function (req, res) {
-        let username = req.body.username;
-        let first = req.body.first;
-        let last = req.body.last;
-        let bio = req.body.bio;
-        let img = req.body.img;
+        const user_id = req.params.id;
+        const first = req.body.first;
+        const last = req.body.last;
+        const bio = req.body.bio;
+        const img = req.body.img;
 
-        db.update_user([username, first, last, bio, img], function (err, response) {
+        db.update_user([user_id, first, last, bio, img], function (err, response) {
             if (err) {
                 res.send(err);
             } else {
@@ -46,71 +98,28 @@ module.exports = {
     },
 
     deleteuser: function (req, res) {
+        console.log(req.params, req.body);
         db.delete_user([req.params.id], function (err, response) {
             if (err) {
                 res.send(err);
             } else {
-                res.send(response);
-            }
-        })
-
-    },
-
-    createboard: function (req, res) {
-        let user_id = req.body.user_id;
-        let name = req.body.name;
-        let description = req.body.description;
-        db.create_board([user_id, name, description], function (err, response) {
-            if (err) {
-                res.send(err);
-            } else {
-                res.status(200).send(response);
+                db.delete_user_login([req.params.id], function (err, response) {
+                    if (err) {
+                        res.send(err);
+                    } else {
+                        res.send(response);
+                    }
+                })
             }
         })
     },
+
 
     updateboard: function (req, res) {
-        let user_id = req.body.user_id;
-        let name = req.body.name;
-        let description = req.body.description;
-        db.update_board([user_id, name, description], function (err, response) {
-            if (err) {
-                res.send(err);
-            } else {
-                res.status(200).send(response);
-            }
-        })
-
-    },
-
-    getboard: function (req, res) {
-        db.get_board([req.params.id], function (err, response) {
-            if (err) {
-                console.log(err)
-                res.send(err);
-            } else {
-                console.log(response)
-                res.status(200).send(response);
-            }
-        })
-    },
-
-    deleteboard: function (req, res) {
-        db.delete_board([req.params.id], function (err, response) {
-            if (err) {
-                res.send(err);
-            } else {
-                res.send(response);
-            }
-        })
-    },
-
-    createpin: function (req, res) {
-        let link = req.body.link
-        let pinterest_id = req.body.pinterest_id;
-        let metadata = JSON.stringify(req.body.metadata);
-        let imageurl = JSON.stringify(req.body.imageurl);
-        db.create_pin([link, pinterest_id, metadata, imageurl], function (err, response) {
+        console.log(req.params, req.body)
+        let user_id = req.params.id;
+        let boards = req.body.boards;
+        db.update_board([user_id, boards], function (err, response) {
             if (err) {
                 res.send(err);
             } else {
@@ -119,79 +128,23 @@ module.exports = {
         })
     },
 
-    updatepin: function (req, res) {
-        let link = req.body.link
-        let pinterest_id = req.body.pinterest_id;
-        let metadata = JSON.stringify(req.body.metadata);
-        let imageurl = JSON.stringify(req.body.imageurl);
-        db.update_pin([link, pinterest_id, metadata, imageurl], function (err, response) {
-            if (err) {
-                res.send(err);
-            } else {
-                res.status(200).send(response);
-            }
-        })
-    },
 
     getpin: function (req, res) {
         db.get_pin([req.params.id], function (err, response) {
             if (err) {
-                console.log(err)
                 res.send(err);
             } else {
-                console.log(response)
-//TODO: make sure the JSON.parse works                
-                response.data.metadata = JSON.parse(response.data.metadata);
-                res.status(200).send(response);
-            } 
-        })
-    },
-
-    deletepin: function (req, res) {
-        db.delete_pin([req.params.id], function (err, response) {
-            if (err) {
-                res.send(err);
-            } else {
-                res.send(response);
-            }
-        })
-    },
-
-    createboardpin: function (req, res) {
-        let pin_id = req.body.pin_id;
-        let board_id = req.body.board_id;
-        db.create_board_pin([pin_id, board_id], function(err, response) {
-            if (err) {
-                console.log(err)
-                res.send(err);
-            } else {
-                console.log(response)
+                //TODO: make sure the JSON.parse works                
+                // response.data.metadata = JSON.parse(response.data.metadata);
                 res.status(200).send(response);
             }
         })
     },
 
-    getboardpin: function (req, res) {
-        db.get_boardpin([req.params.id], function (err, response) {
-            if (err) {
-                console.log(err)
-                res.send(err);
-            } else {
-                console.log(response)
-                res.status(200).send(response);
-            }
-        })
-    },
 
-    deleteboardpin: function (req, res) {
-        db.delete_boardpin([req.params.id], function (err, response) {
-            if (err) {
-                res.send(err);
-            } else {
-                res.send(response);
-            }
-        })
-    }
+
+
+
 
 
 }

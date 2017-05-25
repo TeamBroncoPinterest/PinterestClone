@@ -1,0 +1,1 @@
+select id from userlogin where username = $1;

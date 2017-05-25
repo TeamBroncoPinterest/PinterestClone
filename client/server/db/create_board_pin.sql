@@ -1,1 +1,0 @@
-INSERT INTO boards_pins (pin_id, board_id);

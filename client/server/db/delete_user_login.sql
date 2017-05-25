@@ -1,0 +1,1 @@
+DELETE FROM userlogin WHERE id = $1;

@@ -3,6 +3,8 @@ var bodyParser = require('body-parser');
 var cors = require('cors');
 var massive = require('massive');
 var path = require('path');
+var config = require('./config');
+var session = require ('express-session');
 
 var app = module.exports = express();
 
@@ -12,29 +14,28 @@ app.use(cors());
 app.use(express.static(path.join(__dirname, '/../public/')));
 
 var conn = massive.connectSync({
-  connectionString : server.serverURL
+  connectionString : config.databasestring
 });
 
-app.set('db', conn, );
+app.set('db', conn);
 
 var ctrl = require('./serverCtrl.js')
 var db = app.get('db');
 
-app.post('/api/create_user', ctrl.createuser);
-app.put('./api/update_user', ctrl.updateuser);
-app.get('./api/get_user', ctrl.getuser);
-app.delete('./api/delete_user', ctrl.deleteuser);
-app.post('/api/create_board', ctrl.createboard);
-app.put('./api/update_board', ctrl.updateboard);
-app.get('./api/get_board', ctrl.getboard);
-app.delete('./api/delete_board', ctrl.deletboard);
-app.post('/api/create_pin', ctrl.createpin);
-app.put('./api/update_pin', ctrl.updatepin);
-app.get('./api/get_pin', ctrl.getpin);
-app.delete('./api/delete_pin', ctrl.deletepin);
-app.post('./api/create_board_pin', ctrl.createboardpin);
-app.get('./api/get_board_pin', ctrl.getboardpin);
-app.delete('./api/delete_board_pin', ctrl.deleteboardpin);
+
+
+app.post('/api/create_user', ctrl.createuser); //good
+app.post("/api/login", ctrl.validatelogin); //good
+  app.get('/api/get_user/:id', ctrl.getuser); //good
+  
+
+app.put('/api/update_user/:id', ctrl.updateuser); //good
+app.delete('/api/delete_user/:id', ctrl.deleteuser); //good
+app.put('/api/update_board/:id',ctrl.updateboard); //good
+
+
+app.get('/api/get_pin/:id', ctrl.getpin);  //good
+
 
 var port = 3030;
 app.listen(port, function() {

@@ -1,2 +1,2 @@
-INSERT INTO user (username, first, last, bio, img)
-VALUES ($1, $2, $3, $4, $5);
+INSERT INTO users (user_id, first, last)
+VALUES ($1, $2, $3);

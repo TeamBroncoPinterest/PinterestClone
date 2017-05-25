@@ -1,0 +1,398 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400');
+
+.Pin2Board_wrapper {
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  opacity: 1;
+  font-family: 'Open Sans', sans-serif;
+  z-index: 751;
+  position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Pin2Board_Box {
+  width: 662px;
+  height: 540px;
+  background-color: #ffffff;
+  position: fixed;
+  border-radius: 8px;
+  margin:  auto;
+
+}
+
+.Pin2Board_leftBox {
+  width: 330px;
+  height: 540px;
+  border-radius: 8px 0px 0px 8px;
+  border
+  background-color: #ffffff;
+  float: left;
+  border-right: 1px solid #f5f5f5;
+}
+
+
+.Pin2Board_PinInfo {
+  width: 216px;
+  height: auto;
+  display: block;
+  margin: auto;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+
+}
+
+.Pin2Board_DescBox {
+  height: 32px;
+}
+
+.Pin2Board_PinImg {
+  border: 0;
+    border-radius: 8px;
+    display: block;
+    height: auto;
+    max-width: 100%;
+    position: relative;
+    vertical-align: middle;
+
+}
+
+.Pin2Board_PinDescription {
+       border: none;
+    color: #333;
+    display: inline-block;
+    font-size: 14px;
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: -.15px;
+    line-height: 16px;
+    margin: 5px 0 6px;
+    margin-top:10px;
+    overflow: hidden;
+    resize: none;
+    width: 216px;
+    word-spacing: 0;
+    word-wrap: break-word;
+}
+
+.Pin2Board_rightBox {
+  width: 330px;
+  height: 540px;
+  background-color: #ffffff;
+  float:right;
+  display:block;
+  border-radius: 0px 8px 8px 0px;
+}
+
+
+.Pin2Board_ChooseBoard  {
+  font-size: 22px;
+  font-weight: bold;
+  margin: 0px;
+  padding: 22px 25px 13px;
+}
+
+.Pin2Board_X {
+  height: 7px;
+  width: 7px;
+  background: url(https://image.ibb.co/cMtG0v/Xbutton.png);
+  background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+    border: 0;
+    cursor: pointer;
+    outline: 0;
+    padding: 10px;
+    position: absolute;
+    right: 18px;
+    top: 25px;
+    z-index: 1;
+}
+
+.Pin2Board_LowerRight {
+     display: flex;
+    -webkit-box-flex: 1;
+    -ms-flex: auto;
+    flex: auto;
+    -ms-flex-flow: column;
+    flex-flow: column;
+    min-height: 0;
+}
+
+.Pin2Board_SearchDiv {
+  border-bottom: 1px solid #f5f5f5;
+    -webkit-box-flex: 0;
+    flex: 0 0 auto;
+    padding: 0 23px 15px;
+    position: relative;
+}
+
+.Pin2Board_SearchMag {
+  background: url(https://image.ibb.co/ePbEna/magnifying_glass.png);
+  background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+    height: 18px;
+    left: 35px;
+    position: absolute;
+    top: 12px;
+    width: 18px;
+
+}
+
+.Pin2Board_SerachBar {
+  background-color: #f5f5f5;
+    border: 1px solid #efefef;
+    border-radius: 4px;
+    box-shadow: none;
+    box-sizing: border-box;
+    color: #333;
+    font-size: 14px;
+    font-weight: bold;
+    outline: none;
+    overflow: hidden;
+    padding: 13px 13px 13px 44px;
+    width: 100%;
+}
+
+.Pin2Board_BoardScrollBox {
+    height: 354.55px;
+    border-bottom: 1px solid #f5f5f5;
+    overflow-y: scroll;
+}
+
+.Pin2Board_Header {
+    color: #555;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: -.22px;
+    line-height: 16px;
+    margin-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 23px;
+}
+
+.Pin2Board_UL {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+
+.Pin2Board_BoardDiv {
+  cursor: pointer;
+    display: block;
+    -webkit-font-smoothing: antialiased;
+    padding: 2px 23px;
+    position: relative;
+}
+
+.Pin2Board_BoardImgBox {
+  background: #efefef;
+    border-radius: 3px;
+    display: inline-block;
+    height: 36px;
+    margin-right: 10px;
+    overflow: hidden;
+    vertical-align: middle;
+    width: 36px;
+}
+
+.Pin2Board_BoardImg {
+    height: 100%;
+    margin-left: -5px;
+    max-width: inherit;
+}
+
+.Pin2Board_BoardTitle {
+    color: #555;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: -.25px;
+    line-height: 34px;
+    margin: 7px 0;
+    max-width: 180px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.Pin2Board_BoardDiv:hover .Pin2Board_SaveButton {
+  display: block;
+  cursor:pointer;
+}
+
+.Pin2Board_BoardDiv:hover  {
+  background-color: #f5f5f5;
+  display: block;
+  cursor:pointer;
+}
+
+.Pin2Board_SaveButton {
+      background-color: #bd081c;
+    border: 0;
+    border-radius: 4px;
+    box-shadow: none;
+    color: #efefef;
+    cursor: pointer;
+    display: none;
+    float: right;
+    font-size: 17px;
+    font-weight: bold;
+    height: 36px;
+    margin-top: 6px;
+    outline: none;
+    padding: 7px 8px;
+    white-space: nowrap;
+}
+
+.Pin2Board_PinIcon {
+    display: inline-block;
+    fill: #fff;
+    height:25px;
+   width: 15px;
+    margin-right: 2px;
+    position: relative;
+    top: -3px;
+    vertical-align: middle;
+}
+
+.Pin2Board_CreateBoardButton {
+  -webkit-box-align: center;
+  background-color: #fff;
+  border: none;
+  align-items: center;
+   border-radius: 0 0 6px;
+  display: flex;
+    -webkit-box-flex: 0;
+     flex: 0 1 64px;
+    min-height: 60px;
+  width: 100%
+}
+
+.Pin2Board_CreateBoardButton:hover {
+   background-color: #f5f5f5;
+  cursor:pointer;
+}
+
+.Pin2Board_PlusButton {
+  display: block;
+    fill: #bd081c;
+    float: left;
+    height: 42px;
+    margin-left: 12px;
+    margin-right: 12px;
+    vertical-align: middle;
+    width: 42px;
+}
+
+.Pin2Board_CreateBoard {
+  display: flex;
+    font-weight: bold;
+  font-size: 17px;
+  align-items: center;
+    color: #555;
+}
+
+.Pin2Board_rightBoxHidden {
+  width: 330px;
+  height: 540px;
+  background-color: #ffffff;
+  float:right;
+  display:block;
+  border-radius: 0px 8px 8px 0px;
+}
+
+.Pin2Board_CreateBoardHeader  {
+  font-size: 22px;
+  color: #555;
+  font-weight: bold;
+  margin: 0px;
+  padding: 22px 25px 13px;
+}
+
+.Pin2Board_CreateBoardNameDiv {
+  border-bottom: 1px solid #efefef;
+  flex: 0 0 auto;
+  padding: 10px;
+  padding-right: 0px;
+  height: 72.11;
+}
+
+.Pin2Board_CreateBoardNameHeader {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 1px;
+  margin: 0;
+  color: #a5a5a5;
+
+}
+.Pin2Board_CreateBoardInput {
+  border: 0;
+  box-shadow: none;
+  color: #333;
+  font-size: 14.5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  outline: none;
+  padding: 6px;
+  width: 95%;
+}
+
+.Pin2Board_CreateBoardEmptyDiv {
+  flex: 1 0 auto;
+  height: 317.77px;
+  width: 100%;
+}
+
+.Pin2Board_CreateBoardButtonDiv {
+  border-top: 1px solid #efefef;
+  flex: 0 0 38px;
+  padding: 25px;
+  height: 89px;
+}
+
+.Pin2Board_CreateBoardCancelButton {
+      border: 0;
+      border-radius: 4px;
+      color: #5f5f5f;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+      letter-spacing: -.2px;
+      line-height: 18px;
+      outline: none;
+      padding: 10px 14px;
+      white-space: nowrap;
+      word-spacing: 0;
+}
+
+.Pin2Board_CreateBoardCreateButton {
+     background: #bd081c;
+    color: #fff;
+    cursor: default;
+    float: right;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: -.2px;
+    line-height: 18px;
+    outline: none;
+    padding: 10px 14px;
+    white-space: nowrap;
+    word-spacing: 0;
+      border: 0;
+    border-radius: 4px;
+}
+
+/*#textfield:invalid + #createBtn {
+     background-color: #ebebeb;
+    color: #aaa;
+}*/

@@ -1,1 +1,0 @@
-DELETE FROM boards_pins WHERE id = $1;

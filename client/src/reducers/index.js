@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
-import userReducer from './userReducer';
+// import userReducer from './userReducer';
+import feedReducer from './feedReducer';
 
 const rootReducer = combineReducers({
-  user: userReducer
+  // user: userReducer,
+  feed: feedReducer
 })
 
 export default rootReducer;

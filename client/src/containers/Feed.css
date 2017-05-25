@@ -1,0 +1,48 @@
+.feedWrapper {
+    width: 87.5%;
+    margin: auto;
+}
+.feed {
+  margin: auto;
+  margin-top: 15px;
+  display: block;
+  column-gap: 4px;
+  column-width: 256px;
+}
+
+
+@media (min-width: 260px) {
+  .feedWrapper {
+    width: 260px;
+  }
+}
+
+@media (min-width: 520px) {
+  .feedWrapper {
+    width: 520px;
+  }
+}
+
+@media (min-width: 780px) {
+  .feedWrapper {
+    width: 780px;
+  }
+}
+
+@media (min-width: 1040px) {
+  .feedWrapper {
+    width: 1040px;
+  }
+}
+
+@media (min-width: 1300px) {
+  .feedWrapper {
+    width: 1300px;
+  }
+}
+
+@media (min-width: 1560px) {
+  .feedWrapper {
+    width: 1560px;
+  }
+}

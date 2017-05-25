@@ -1,0 +1,19 @@
+.profile-container {
+  width: 100%;
+  min-height: calc(100vh); /* - 73px); */
+  display: flex;
+  flex-direction: column;
+}
+.profile-side-margin {
+  width: 800px;
+  margin: auto;
+}
+.profile-nav {
+  height: 63px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  position: fixed;
+}
+.profile-profile-info {
+  margin-top: 63px;
+}

@@ -54,10 +54,9 @@ class Profile extends Component {
           </div>
         </div>
         <div className="profile-boards-pins">
-<<<<<<< HEAD
+
           <AddBoard/>
           <SingleBoard/>
-=======
           <SingleBoard />
           <SingleBoard />
           <SingleBoard />
@@ -68,7 +67,6 @@ class Profile extends Component {
             <SingleBoard />
             <SingleBoard />
             <SingleBoard />
->>>>>>> master
         </div>
       </div>
     )

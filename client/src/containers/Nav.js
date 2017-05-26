@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 import './Nav.css';
 import magnifyingGlass from '../pics/magnifying-glass.png';
@@ -12,7 +13,8 @@ class Nav extends Component {
       <div className="nav-container">
         <div className="nav-left">
           <div className="nav-logo-container">
-            <img src={logo} className="nav-logo" alt="" />
+              <Link to="/"><img src={logo} className="nav-logo" alt="" /></Link>
+
           </div>
           <div className="nav-search-container">
             <img className="nav-magnifying-glass" src={magnifyingGlass} alt="" />
@@ -21,8 +23,8 @@ class Nav extends Component {
         </div>
         <nav className="nav-right">
           <ul className="nav-nav-list">
-            <li className="nav-nav-item"><img className="nav-nav-image" src={compass} alt="" /></li>
-            <li className="nav-nav-item"><img className="nav-nav-profile" src={profileIcon} alt="" /></li>
+            <li className="nav-nav-item"><Link to="/"><img className="nav-nav-image" src={compass} alt="" /></Link></li>
+            <li className="nav-nav-item"><Link to="/profile"><img className="nav-nav-profile" src={profileIcon} alt="" /></Link></li>
           </ul>
         </nav>
       </div>

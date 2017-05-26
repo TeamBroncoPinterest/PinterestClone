@@ -89,6 +89,7 @@
   float:right;
   display:block;
   border-radius: 0px 8px 8px 0px;
+  transition: all 1s ease;
 }
 
 
@@ -304,7 +305,7 @@
   font-size: 17px;
   align-items: center;
   color: #555;
-    
+
 }
 
 .Pin2Board_rightBoxHidden {

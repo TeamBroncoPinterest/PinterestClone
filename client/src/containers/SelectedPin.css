@@ -20,15 +20,12 @@
   margin: auto;
   background: white;
   border-radius: 5px;
-  /*padding: 15px;*/
-  margin-bottom: 35px;
-  /*position: relative;*/
+  padding-bottom: 15px;
+  margin-bottom: 80px;
 }
 .selected-pin-header {
   display: block;
   background: white;
-  /*font-size: 14px;*/
-
   justify-content: space-between;
   align-items: center;
   height: 60px;
@@ -39,22 +36,23 @@
   transition: 0.2s padding ease;
   position: sticky;
     top: -40px;
-  width: 628px;
-  /*background: white;*/
+  width: 100%;
+  z-index: 15;
 }
 .selected-pin-view {
   margin: auto;
   margin-top: -px;
   margin-bottom: 20px;
   display: flex;
-  width: 550px;
+  width: 90%;
   justify-content: space-around;
   align-items: center;
+  position: relative;
 }
 .selected-pin-img {
   margin: 0 auto;
   border-radius: 5px;
-  width: 564px;
+  width: 100%;
 }
 .selected-pin-info {
   display: flex;
@@ -71,6 +69,7 @@
   align-items: center;
   margin-right: 10px;
   margin-bottom: 10px;
+  padding: 5px;
 }
 .selected-pin-about-logo {
   height: 40px;
@@ -82,8 +81,10 @@
   margin-left: 15px;
   display: flex;
   align-items: center;
-  width: 30%;
+  width: 95%;
   margin-top: 10px;
+  border-bottom: 1px solid grey;
+  padding: 5px;
 }
 .selected-pin-control {
   width: 25%;
@@ -96,6 +97,8 @@
   background: white;
   margin-top: -5px;
   color: grey;
+  height: 30px;
+  width: 30px;
 }
 .selected-pin-control-button-close {
   background: none;
@@ -103,6 +106,14 @@
   position: fixed;
     top: 40px;
     right: 40px;
+}
+.selected-pin-control-button-close-mobile {
+  background: none;
+  border: none;
+  position: absolute;
+  display: none;
+    top: 20px;
+    right: 20px;
 }
 .selected-pin-control-button-img {
   height: 30px;
@@ -115,12 +126,10 @@
   border: 0;
   box-shadow: none;
   height: 36px;
+  width: 74px;
   display: block;
   float: right;
-  /*align-items: center;
-  justify-content: space-between;*/
-  /*width: 75px;*/
-  font-size: 17px;
+  font-size: 14px;
   border-radius: 4px;
   padding: 7px 8px;
   white-space: nowrap;
@@ -147,4 +156,22 @@
 }
 .selected-pin-control-button:focus {
   outline: none;
+}
+
+@media (max-width: 650px) {
+  .selected-pin-container {
+    width: 95%;
+  }
+  .selected-pin-control-button-img {
+    height: 20px;
+    width: 20px;
+  }
+}
+@media (max-width: 799px) {
+  .selected-pin-control-button-close {
+    display: none;
+  }
+  .selected-pin-control-button-close-mobile {
+    display: block;
+  }
 }

@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import Modal_Component from "./Modal_Component"
-import './Modal_Component.css'
+import ModalComponent from "./ModalComponent"
+import './ModalComponent.css'
 
 class CreateBoard extends Component {
 
   render() {
     return (
 
-        <Modal_Component closeWindow={() => this.props.closeWindow()} title="Create board">
+        <ModalComponent closeWindow={() => this.props.closeWindow()} title="Create board">
 
           <div  className="CreateBoard_CreateBoard">
             <h5 className="CreateBoard_Name">Name</h5>
@@ -20,7 +20,7 @@ class CreateBoard extends Component {
              <textarea  type='text'  className="CreateBoard_Input"  required> </textarea>
            </div>
 
-        </Modal_Component>
+        </ModalComponent>
 
     )
   }

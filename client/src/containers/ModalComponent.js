@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
-import './Modal_Component.css'
+import './ModalComponent.css'
 
-class Modal_Component extends Component {
+class ModalComponent extends Component {
 
   render() {
     return (
@@ -22,9 +22,9 @@ class Modal_Component extends Component {
                 <button className="cancel_button" onClick={() => this.props.closeWindow()}><b>Cancel</b></button>
               <button className="create_button"><b>Create</b></button>
            </div>
+           </div>
          </div>
        </div>
-     </div>
     )
   }
 }
@@ -32,4 +32,4 @@ class Modal_Component extends Component {
 
 
 
-export default Modal_Component;
+export default ModalComponent;

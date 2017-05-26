@@ -15,6 +15,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 751;
 }
 
 .Pin2Board_Box {
@@ -237,7 +238,7 @@
 }
 
 .Pin2Board_SaveButton {
-      background-color: #bd081c;
+    background-color: #bd081c;
     border: 0;
     border-radius: 4px;
     box-shadow: none;
@@ -258,7 +259,7 @@
     display: inline-block;
     fill: #fff;
     height:25px;
-   width: 15px;
+    width: 15px;
     margin-right: 2px;
     position: relative;
     top: -3px;
@@ -309,6 +310,7 @@
   float:right;
   display:block;
   border-radius: 0px 8px 8px 0px;
+  z-index: 752;
 }
 
 .Pin2Board_CreateBoardHeader  {

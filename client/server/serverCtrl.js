@@ -157,6 +157,10 @@ module.exports = {
             if (err) {
                 res.send(err);
             } else {
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
                 res.status(200).send(response);
             }
         })
@@ -164,6 +168,13 @@ module.exports = {
 
 
 
+<<<<<<< HEAD
+=======
+
+
+
+
+>>>>>>> master
 }
 
 

@@ -23,18 +23,25 @@ var ctrl = require('./serverCtrl.js')
 var db = app.get('db');
 
 
-
+//USER
 app.post('/api/create_user', ctrl.createuser); //good
 app.post("/api/login", ctrl.validatelogin); //good
   app.get('/api/get_user/:id', ctrl.getuser); //good
-
 
 app.put('/api/update_user/:id', ctrl.updateuser); //good
 app.delete('/api/delete_user/:id', ctrl.deleteuser); //good
 app.put('/api/update_board/:id',ctrl.updateboard); //good
 
-
+//PINS
+//feed
+app.get('/api/feed', ctrl.getFeed) //good
+//search
+app.get('/api/feed/:term', ctrl.searchFeed)
+//user pins
 app.get('/api/get_pin/:id', ctrl.getpin);  //good
+
+
+// app.post('/api/pins', ctrl.storePins)
 
 
 var port = 3030;

@@ -16,10 +16,11 @@ import Pin2BoardModal from './containers/Pin2BoardModal';
 
 class App extends Component {
   componentWillMount() {
-    window.PDK.init({
-        appId: 4901570145085834798,
-        cookie: true
-    });
+    // window.PDK.init({
+    //     appId: 4901570145085834798,
+    //     cookie: true
+    // });
+    // window.PDK.logout();
     // window.PDK.login({ scope : 'read_public'})
     this.props.getFeed();
   }

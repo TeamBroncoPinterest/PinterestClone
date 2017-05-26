@@ -22,9 +22,9 @@ class ModalComponent extends Component {
                 <button className="cancel_button" onClick={() => this.props.closeWindow()}><b>Cancel</b></button>
               <button className="create_button"><b>Create</b></button>
            </div>
-           </div>
          </div>
        </div>
+     </div>
     )
   }
 }

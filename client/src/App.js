@@ -19,6 +19,7 @@ class App extends Component {
         appId: 4901570145085834798,
         cookie: true
     });
+    // window.PDK.logout();
     // window.PDK.login({ scope : 'read_public'})
     this.props.getFeed();
   }

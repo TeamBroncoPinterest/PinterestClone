@@ -3,6 +3,7 @@
   min-height: calc(100vh - 73px);
   display: flex;
   flex-direction: column;
+  min-height: calc(100vh - 73px);
 }
 .profile-side-margin {
   width: 800px;
@@ -46,8 +47,9 @@
   color: #555;
   font-size: 36px;
   line-height: 42px;
-  letter-spacing: -1px;
   margin: 0px;
+  letter-spacing: -1.25px;
+  word-spacing: -2.25px;
 }
 .profile-profile-info-right {
   display: flex;

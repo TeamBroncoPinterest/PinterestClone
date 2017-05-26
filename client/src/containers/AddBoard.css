@@ -4,6 +4,13 @@ p {
     margin: 0;
 }
 
+.add-board-shell-container {
+  width: 321px;
+  height: 272px;
+  margin: 8px 2px;
+  z-index: 0;
+}
+
 .add-board-shell {
     width: 301px;
     height: 252px;
@@ -38,7 +45,6 @@ p {
     border-radius: 8px;
     overflow: hidden;
     position: relative;
-    padding-bottom: 10px;
         background: #efefef;
 
 }
@@ -60,7 +66,7 @@ p {
     display: flex;
     justify-content: space-between;
     padding-bottom: 6px;
-    padding-top: 6px;
+    padding-top: 16px;
     /*background: brown;*/
 }
 

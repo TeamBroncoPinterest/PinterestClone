@@ -1,12 +1,34 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { selectPin } from '../actions/feedActions';
+import $ from 'jquery';
 
 
 import './SinglePin.css';
 import pin from '../pics/pin.png';
 import blankProfile from '../pics/blank-profile.png';
+import SelectedPin from './SelectedPin';
 
 class SinglePin extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { selected: false }
+  }
 
+  selectPin = () => {
+    this.setState({ selected: true })
+    this.props.selectPin(this.props.data)
+      $('body').css('overflow', 'hidden');
+
+
+
+
+  }
+
+  exitPin = () => {
+    this.setState({ selected: false })
+    $('body').css('overflow', 'scroll')
+  }
   render() {
     const data = this.props.data
     let title = ''
@@ -20,12 +42,13 @@ class SinglePin extends Component {
         <div className="single-pin-outer-container">
           <div className="single-pin-inner-container">
             <div className="single-pin-pic-container">
+            { this.state.selected && <SelectedPin exitPin={() => this.exitPin()} /> }
               <img className="single-pin-pic" src={data.image.original.url} alt="" />
               <button className="single-pin-save"><img className="single-pin-save-pin" src={pin} alt="pin"/>Save</button>
               <div className="dimGradient">
                 <a><p><span>{data.original_link}</span></p></a>
               </div>
-              <a className="dimOverlay" href={data.original_link}><div></div></a>
+              <a className="dimOverlay" onClick={() => this.selectPin()}><div></div></a>
             </div>
             <div className="single-pin-description-container">
               <p className="single-pin-title">
@@ -49,7 +72,11 @@ class SinglePin extends Component {
   }
 }
 
+function mapStateToProps(state) {
+  return {
+    pin: state.data
+  }
+}
 
 
-
-export default SinglePin;
+export default connect(mapStateToProps, { selectPin })(SinglePin);

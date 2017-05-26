@@ -6,8 +6,8 @@ import blankProfilePic from '../pics/blank-profile.png';
 import pin from '../pics/pin.png';
 import close from '../pics/close-icon.png';
 import check from '../pics/check-icon.png';
-import dots from '../pics/dots-icon.png';
-import share from '../pics/share-icon.png'
+import dots from '../pics/dots-icon.svg';
+import share from '../pics/share-icon.svg'
 
 
 
@@ -30,6 +30,7 @@ class SelectedPin extends Component {
             <button className='selected-pin-save'><img className='selected-pin-save-img' src={pin} alt='pin'/>Save</button>
           </div>
           <div className='selected-pin-view'>
+            <button className='selected-pin-control-button-close-mobile' onClick={() => this.props.exitPin()}><img src={close} alt='close' /></button>
             <img src={data.image.original.url} alt='img' className='selected-pin-img'/>
           </div>
           <div className='selected-pin-info'>

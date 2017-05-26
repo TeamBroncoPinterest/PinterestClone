@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 
+import SingleBoard from './SingleBoard'
+
+//Stylings and Pics
 import './Profile.css';
 import nut from '../pics/nut.png';
 import dotdotdot from '../pics/dotdotdot.png';
@@ -13,6 +16,10 @@ class Profile extends Component {
       img: blankProfile,
       boards: []
     }
+
+    const boards = data.boards.map((v) => {
+      return <SingleBoard data={v} key={v.name} />
+    })
 
     return (
       <div className="profile-container">
@@ -46,7 +53,16 @@ class Profile extends Component {
           </div>
         </div>
         <div className="profile-boards-pins">
-          boards
+          <SingleBoard />
+          <SingleBoard />
+          <SingleBoard />
+          <SingleBoard />
+          <SingleBoard />
+            <SingleBoard />
+            <SingleBoard />
+            <SingleBoard />
+            <SingleBoard />
+            <SingleBoard />
         </div>
       </div>
     )

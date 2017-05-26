@@ -17,6 +17,7 @@
   position: fixed;
   display: flex;
   align-items: center;
+  z-index: 2;
 }
 .profile-nut {
   height: 26px;
@@ -90,4 +91,36 @@
 .profile-button-pins {
   padding: 12px 16px;
   margin-left: 8px;
+}
+.profile-boards-pins {
+  margin: auto;
+  width: 325px;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+
+
+@media (min-width: 650px) {
+  .profile-boards-pins {
+    width: 650px;
+  }
+}
+
+@media (min-width: 975px) {
+  .profile-boards-pins {
+    width: 975px;
+  }
+}
+
+@media (min-width: 1300px) {
+  .profile-boards-pins {
+    width: 1300px;
+  }
+}
+
+@media (min-width: 1625px) {
+  .profile-boards-pins {
+    width: 1625px;
+  }
 }

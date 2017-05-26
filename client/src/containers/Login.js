@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import './Login.css';
 import CreateBoard from './CreateBoard';
-import SingleBoard from './SingleBoard';
+
 
 class Login extends Component {
   constructor(props) {
@@ -26,7 +26,7 @@ class Login extends Component {
       <div className="login-container">
         { this.state.create && <CreateBoard closeWindow={() => this.closeWindow()} /> }
         <button onClick={() => this.createBoard()}>Login</button>
-        <SingleBoard />
+
       </div>
     )
   }

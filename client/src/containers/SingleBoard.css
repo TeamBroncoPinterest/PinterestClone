@@ -46,7 +46,6 @@ p {
     overflow: hidden;
     display: block;
     position: relative;
-    padding-bottom: 10px;
 }
 
 .single-board-pic {
@@ -61,7 +60,7 @@ p {
     display: flex;
     justify-content: space-between;
     padding-bottom: 6px;
-    padding-top: 6px;
+    padding-top: 16px;
     /*background: brown;*/
 }
 

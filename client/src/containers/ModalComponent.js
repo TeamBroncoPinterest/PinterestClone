@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
-import './Modal_Component.css'
+import './ModalComponent.css'
 
-class Modal_Component extends Component {
+class ModalComponent extends Component {
 
   render() {
     return (
@@ -32,4 +32,4 @@ class Modal_Component extends Component {
 
 
 
-export default Modal_Component;
+export default ModalComponent;

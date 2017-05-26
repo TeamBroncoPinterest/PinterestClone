@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 
+import SingleBoard from './SingleBoard'
+
+//Stylings and Pics
 import './Profile.css';
 import nut from '../pics/nut.png';
 import dotdotdot from '../pics/dotdotdot.png';

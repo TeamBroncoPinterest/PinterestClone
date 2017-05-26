@@ -30,7 +30,7 @@
 
 
 .ModalBoard_TopBox {
- max- height: 54.11px;
+  max-height: 54.11px;
   border-bottom: 1px solid #dfdfdf;
 }
 
@@ -117,7 +117,7 @@
     box-shadow: none;
     padding: 10px 14px ;
     position: relative;
-    text-shadow: nonet;
+    text-shadow: none;
 
 }
 
@@ -130,7 +130,7 @@
     box-shadow: none;
     padding: 10px 14px ;
     position: relative;
-    text-shadow: nonet;
+    text-shadow: none;
   margin-right: 5px;
 
 }

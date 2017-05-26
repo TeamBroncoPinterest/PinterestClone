@@ -6,6 +6,7 @@ class SingleBoard extends Component {
     render() {
 
         return (
+          <div className="single-board-shell-container">
             <div className="single-board-shell">
                 <div className="single-board-outer-container">
                     <div className="single-board-inner-container">
@@ -23,6 +24,7 @@ class SingleBoard extends Component {
                     </div>
                 </div>
             </div>
+          </div>
         )
     }
 }

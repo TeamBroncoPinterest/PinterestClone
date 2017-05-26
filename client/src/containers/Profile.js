@@ -17,6 +17,10 @@ class Profile extends Component {
       boards: []
     }
 
+    const boards = data.boards.map((v) => {
+      return <SingleBoard data={v} key={v.name} />
+    })
+
     return (
       <div className="profile-container">
         <div className="profile-nav">
@@ -49,7 +53,16 @@ class Profile extends Component {
           </div>
         </div>
         <div className="profile-boards-pins">
-          boards
+          <SingleBoard />
+          <SingleBoard />
+          <SingleBoard />
+          <SingleBoard />
+          <SingleBoard />
+            <SingleBoard />
+            <SingleBoard />
+            <SingleBoard />
+            <SingleBoard />
+            <SingleBoard />
         </div>
       </div>
     )

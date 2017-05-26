@@ -4,6 +4,12 @@ p {
     margin: 0;
 }
 
+.single-board-shell-container {
+  width: 321px;
+  height: 272px;
+  margin: 8px 2px;
+  z-index: 0;
+}
 .single-board-shell {
     width: 301px;
     height: 252px;

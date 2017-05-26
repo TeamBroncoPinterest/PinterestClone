@@ -1,8 +1,24 @@
 import React, { Component } from 'react';
+import Pin2BoardCreateBoard from './Pin2BoardModalCreateBoard';
+import Pin2BoardSelectBoard from './Pin2BoardModalSelectBoard';
 
 import './Pin2Board.css'
 
+
 class Pin2BoardModal extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { showBoards: false }
+  }
+
+  createBoardClick = () => {
+    this.setState({showBoards: true})
+  }
+
+  createBoardExit = () => {
+    this.setState({showBoards: false})
+  }
+
 
   render() {
     return (
@@ -21,7 +37,8 @@ class Pin2BoardModal extends Component {
 
 
 
-        { this.props.children }
+        { (this.state.showBoards && <Pin2BoardCreateBoard createBoardExit={() => this.createBoardExit()}/>)
+        || <Pin2BoardSelectBoard createBoardClick={() => this.createBoardClick()} /> }
 
 
 

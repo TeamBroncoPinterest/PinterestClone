@@ -79,4 +79,6 @@ p {
     word-spacing: 0;
     color: #b5b5b5;
     text-align: left;
+        -webkit-font-smoothing: antialiased;
+
 }

@@ -1,3 +1,10 @@
+import React, {Component} from 'react';
+import Profile from './Profile'
+import './UpdateBoard.css';
+
+class UpdateBoard extends Component {
+    render() {
+
 <div>
         <div className="UpdateBoard_wrapper">
           <div className="UpdateBoard_Box">
@@ -27,3 +34,6 @@
            </div>
          </div>
        </div>
+}
+
+export default UpdateBoard;

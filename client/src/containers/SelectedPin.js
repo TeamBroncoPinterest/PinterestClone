@@ -8,17 +8,32 @@ import close from '../pics/close-icon.png';
 import check from '../pics/check-icon.png';
 import dots from '../pics/dots-icon.svg';
 import share from '../pics/share-icon.svg'
+import Pin2BoardModal from './Pin2BoardModal'
 
 
 
 class SelectedPin extends Component {
-  
+
+  constructor(props) {
+    super(props)
+    this.state = { savePin: false}
+  }
+
+  savePin = () => {
+    this.setState({ savePin: true })
+  }
+
+  savePinExit = () => {
+    this.setState({ savePin: false })
+  }
+
 
   render() {
     const data = this.props.data;
     console.log(data);
     return (
-      <div exitPin={() => this.props.exitPin()} className='selected-pin-body'>
+      <div className='selected-pin-body'>
+      { this.state.savePin && <Pin2BoardModal savePinExit ={ () => this.savePinExit() } /> }
       <button className='selected-pin-control-button-close' onClick={() => this.props.exitPin()}><img src={close} alt='close' /></button>
         <div className='selected-pin-container'>
           <div className='selected-pin-header'>
@@ -27,7 +42,7 @@ class SelectedPin extends Component {
               <button className='selected-pin-control-button'><img src={check} alt='check' className='selected-pin-control-button-img' /></button>
               <button className='selected-pin-control-button'><img src={dots} alt='dots' className='selected-pin-control-button-img' /></button>
             </div>
-            <button className='selected-pin-save'><img className='selected-pin-save-img' src={pin} alt='pin'/>Save</button>
+            <button onClick={() => this.savePin() } className='selected-pin-save'><img className='selected-pin-save-img' src={pin} alt='pin'/>Save</button>
           </div>
           <div className='selected-pin-view'>
             <button className='selected-pin-control-button-close-mobile' onClick={() => this.props.exitPin()}><img src={close} alt='close' /></button>

@@ -8,11 +8,12 @@ import './SinglePin.css';
 import pin from '../pics/pin.png';
 import blankProfile from '../pics/blank-profile.png';
 import SelectedPin from './SelectedPin';
+import Pin2BoardModal from './Pin2BoardModal'
 
 class SinglePin extends Component {
   constructor(props) {
     super(props);
-    this.state = { selected: false }
+    this.state = { selected: false, savePin: false }
   }
 
   selectPin = () => {
@@ -27,6 +28,14 @@ class SinglePin extends Component {
     $('body').css('overflow', 'scroll')
   }
 
+  savePin = () => {
+    this.setState({ savePin: true })
+  }
+
+  savePinExit = () => {
+    this.setState({ savePin: false })
+  }
+
 
   render() {
     const data = this.props.data
@@ -36,14 +45,14 @@ class SinglePin extends Component {
     } else if (data.metadata.link) {
       title = data.metadata.link.title;
     }
-    return (
+    return ( 
       <div className="single-pin-shell">
         <div className="single-pin-outer-container">
           <div className="single-pin-inner-container">
             <div className="single-pin-pic-container">
-            { this.state.selected && <SelectedPin exitPin={() => this.exitPin()} /> }
+            { (this.state.selected && <SelectedPin exitPin={() => this.exitPin()} />) || (this.state.savePin && <Pin2BoardModal savePinExit ={ () => this.savePinExit() } />) }
               <img className="single-pin-pic" src={data.image.original.url} alt="" />
-              <button className="single-pin-save"><img className="single-pin-save-pin" src={pin} alt="pin"/>Save</button>
+              <button onClick={() => this.savePin()} className="single-pin-save"><img className="single-pin-save-pin" src={pin} alt="pin"/>Save</button>
               <div className="dimGradient">
                 <a><p><span>{data.original_link}</span></p></a>
               </div>

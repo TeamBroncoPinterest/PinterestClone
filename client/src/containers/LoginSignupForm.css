@@ -1,5 +1,9 @@
 .loginsignup-form-shell {
     width: 400px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .loginsignup-form-outer-container {
@@ -118,14 +122,14 @@
     /*-webkit-font-smoothing: antialiased;*/
 }
 
-a {
+.loginsignup-form-login-noaccount-link {
     text-decoration: none;
     color: rgb(51, 51, 51);
     font-weight: bold;
     cursor: pointer;
 }
 
-a:hover {
+.loginsignup-form-login-noaccount-link:hover {
     color: #8a8a8a;
 }
 
@@ -134,6 +138,7 @@ a:hover {
     margin: 15px auto 0;
     /*background: green;*/
     overflow: hidden;
+    /*display: none;*/
 }
 
 .loginsignup-form-signup-welcome {
@@ -237,14 +242,14 @@ a:hover {
     background-color: #d50c22
 }
 
-.loginsignup-form-signup-noaccount-container {
+.loginsignup-form-signup-existingaccount-container {
     margin-top: 30px;
     margin-bottom: 40px;
     border-top: 1px solid rgb(239, 239, 239);
     width: 100%;
 }
 
-.loginsignup-form-signup-noaccount {
+.loginsignup-form-signup-existingaccount {
     margin-top: 10px;
     color: rgb(33, 25, 34);
     font-size: 13px;
@@ -252,9 +257,13 @@ a:hover {
     /*-webkit-font-smoothing: antialiased;*/
 }
 
-a {
+.loginsignup-form-signup-existingaccount-link {
     text-decoration: none;
     color: rgb(51, 51, 51);
     font-weight: bold;
     cursor: pointer;
+}
+
+.loginsignup-form-signup-existingaccount-link:hover {
+    color: #8a8a8a;
 }

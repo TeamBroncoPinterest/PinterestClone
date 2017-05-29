@@ -15,6 +15,7 @@ import Pin2BoardModal from './containers/Pin2BoardModal';
 
 
 class App extends Component {
+  
   componentWillMount() {
     // window.PDK.init({
     //     appId: 4901570145085834798,

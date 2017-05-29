@@ -2,12 +2,8 @@ import React, {Component} from 'react';
 
 import './Login.css';
 
-
-
-class Login extends Component {
-
-
 import LoginSignupForm from './LoginSignupForm';
+
 
 
 class Login extends Component {
@@ -17,9 +13,7 @@ class Login extends Component {
 
     return (
       <div className="login-container">
-
-        <button>Login</button>
-
+        <LoginSignupForm/>
 
       </div>
     )

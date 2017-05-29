@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
-
+import Profile from './Profile'
 import './AddBoard.css';
 
 class AddBoard extends Component {
     render() {
 
         return (
-            <div className="add-board-shell-container">
+            <div onClick={() => this.props.createBoard()} className="add-board-shell-container">
                 <div className="add-board-shell">
                     <div className="add-board-outer-container">
                         <div className="add-board-inner-container">

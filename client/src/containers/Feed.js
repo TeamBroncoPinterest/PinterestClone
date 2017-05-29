@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import SinglePin from './SinglePin';
-import axios from 'axios';
+// import axios from 'axios';
 import './Feed.css';
 
 

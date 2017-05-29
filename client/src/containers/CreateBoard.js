@@ -11,13 +11,13 @@ class CreateBoard extends Component {
 
           <div  className="CreateBoard_CreateBoard">
             <h5 className="CreateBoard_Name">Name</h5>
-              <input  type='text' className="CreateBoard_Input" placeholder='Like "places to Go" or "Recipes to Make"' require />
+              <input  type='text' className="CreateBoard_Input" placeholder='Like "places to Go" or "Recipes to Make"' />
             </div>
 
 
             <div  className="CreateBoard_CreateBoard">
              <h5 className="CreateBoard_Name">Description</h5>
-             <textarea  type='text'  className="CreateBoard_Input"  required> </textarea>
+             <textarea  type='text' value=''  className="CreateBoard_Input" > </textarea>
            </div>
 
         </ModalComponent>

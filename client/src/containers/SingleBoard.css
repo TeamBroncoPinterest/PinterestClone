@@ -73,6 +73,8 @@ p {
     word-spacing: 0;
     color: #555;
     text-align: left;
+        -webkit-font-smoothing: antialiased;
+
 }
 
 .single-board-edit {

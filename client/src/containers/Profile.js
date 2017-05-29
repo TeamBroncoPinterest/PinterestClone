@@ -1,11 +1,30 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
+import CreateBoard from './CreateBoard';
+import SingleBoard from './SingleBoard'
 
+
+//Stylings and Pics
 import './Profile.css';
 import nut from '../pics/nut.png';
 import dotdotdot from '../pics/dotdotdot.png';
 import blankProfile from '../pics/blank-profile.png';
+import AddBoard from './AddBoard';
 
 class Profile extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = { create: false }
+  }
+
+  createBoard = () => {
+    this.setState({ create: true })
+  }
+
+  closeWindow = () => {
+    this.setState({ create: false })
+  }
+
   render() {
     const data = {
       first: 'Cameron',
@@ -14,15 +33,19 @@ class Profile extends Component {
       boards: []
     }
 
+    const boards = data.boards.map((v) => {
+      return <SingleBoard data={v} key={v.name} />
+    })
+
     return (
       <div className="profile-container">
         <div className="profile-nav">
           <div className="profile-side-margin">
             <div className="profile-icon">
-              <img className="profile-nut" src={nut} alt="" />
+              <img className="profile-nut" src={nut} alt=""/>
             </div>
             <div className="profile-icon">
-              <img className="profile-dotdotdot" src={dotdotdot} alt="" />
+              <img className="profile-dotdotdot" src={dotdotdot} alt=""/>
             </div>
           </div>
         </div>
@@ -31,22 +54,34 @@ class Profile extends Component {
             <div className="profile-name">
               <h3>{data.first}</h3>
             </div>
-            <div className="profile-profile-info-right" >
+            <div className="profile-profile-info-right">
               <div className="profile-info-bio">{data.bio}</div>
               <div className="profile-info-pic-container">
-                <img className="profile-info-pic"src={data.img} alt="missing profile pic" />
+                <img className="profile-info-pic" src={data.img} alt="missing profile pic"/>
               </div>
             </div>
           </div>
         </div>
         <div className="profile-filter">
           <div className="profile-side-margin profile-buttons">
-            <button className="profile-button profile-button-boards" >Boards</button>
-            <button className="profile-button profile-button-pins" >Pins</button>
+            <button className="profile-button profile-button-boards">Boards</button>
+            <button className="profile-button profile-button-pins">Pins</button>
           </div>
         </div>
         <div className="profile-boards-pins">
-          boards
+          { this.state.create && <CreateBoard closeWindow={() => this.closeWindow()} /> }
+          <AddBoard createBoard={() => this.createBoard()}  />
+          <SingleBoard/>
+          <SingleBoard />
+          <SingleBoard />
+          <SingleBoard />
+          <SingleBoard />
+          <SingleBoard />
+            <SingleBoard />
+            <SingleBoard />
+            <SingleBoard />
+            <SingleBoard />
+            <SingleBoard />
         </div>
       </div>
     )

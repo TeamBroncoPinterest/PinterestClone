@@ -19,12 +19,15 @@ class SinglePin extends Component {
     this.setState({ selected: true })
     this.props.selectPin(this.props.data)
       $('body').css('overflow', 'hidden');
+
   }
 
   exitPin = () => {
     this.setState({ selected: false })
     $('body').css('overflow', 'scroll')
   }
+
+
   render() {
     const data = this.props.data
     let title = ''

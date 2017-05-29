@@ -7,10 +7,10 @@ CREATE TABLE userlogin (
 CREATE TABLE users (
     id serial primary key,
     user_id integer references userlogin(id),
-    first varchar(50), 
-    last varchar(50), 
-    bio varchar(250) default 'I love pinterest.', 
-    pincount integer, 
+    first varchar(50),
+    last varchar(50),
+    bio varchar(250) default 'I love pinterest.',
+    pincount integer,
     boardcount integer,
     img varchar(100) default  'https://www.westdean.org.uk/images/profile-placeholder.jpg',
     boards JSON default '[]'
@@ -21,17 +21,19 @@ CREATE TABLE boards (
     user_id int references userlogin(id),
     name varchar(50),
     description varchar(100),
-    pins JSON, 
+    pins JSON,
     pincount integer
 );
 
 CREATE TABLE pins (
     id serial primary key,
-    link varchar(100),
-    pinterest_id varchar(50),
-    metadata varchar(3000),
-    counts varchar(100),
-    imageurl varchar(250)
+    user_id int,
+    creator JSON,
+    image JSON,
+    original_link text,
+    note text,
+    board JSON,
+    metadata JSON
 );
 
 INSERT INTO userlogin (username, password)
@@ -45,12 +47,3 @@ VALUES (1, 'Kaleigh', 'Niemela', 1, 1);
 
 INSERT INTO boards (user_id, name, description, pincount)
 VALUES (1, 'Food', 'Food I want to make', 1);
-
-
-
-
-
-
-
-
-

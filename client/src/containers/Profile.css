@@ -3,6 +3,7 @@
   min-height: calc(100vh - 73px);
   display: flex;
   flex-direction: column;
+  min-height: calc(100vh - 73px);
 }
 .profile-side-margin {
   width: 800px;
@@ -17,6 +18,7 @@
   position: fixed;
   display: flex;
   align-items: center;
+  z-index: 2;
 }
 .profile-nut {
   height: 26px;
@@ -46,8 +48,9 @@
   color: #555;
   font-size: 36px;
   line-height: 42px;
-  letter-spacing: -1px;
   margin: 0px;
+  letter-spacing: -1.25px;
+  word-spacing: -2.25px;
 }
 .profile-profile-info-right {
   display: flex;
@@ -90,4 +93,36 @@
 .profile-button-pins {
   padding: 12px 16px;
   margin-left: 8px;
+}
+.profile-boards-pins {
+  margin: auto;
+  width: 325px;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+
+
+@media (min-width: 650px) {
+  .profile-boards-pins {
+    width: 650px;
+  }
+}
+
+@media (min-width: 975px) {
+  .profile-boards-pins {
+    width: 975px;
+  }
+}
+
+@media (min-width: 1300px) {
+  .profile-boards-pins {
+    width: 1300px;
+  }
+}
+
+@media (min-width: 1625px) {
+  .profile-boards-pins {
+    width: 1625px;
+  }
 }

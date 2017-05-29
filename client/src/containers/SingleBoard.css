@@ -4,6 +4,12 @@ p {
     margin: 0;
 }
 
+.single-board-shell-container {
+  width: 321px;
+  height: 272px;
+  margin: 8px 2px;
+  z-index: 0;
+}
 .single-board-shell {
     width: 301px;
     height: 252px;
@@ -40,7 +46,6 @@ p {
     overflow: hidden;
     display: block;
     position: relative;
-    padding-bottom: 10px;
 }
 
 .single-board-pic {
@@ -55,7 +60,7 @@ p {
     display: flex;
     justify-content: space-between;
     padding-bottom: 6px;
-    padding-top: 6px;
+    padding-top: 16px;
     /*background: brown;*/
 }
 
@@ -63,10 +68,13 @@ p {
     font-family: sans-serif;
     font-size: 18px;
     letter-spacing: -.25px;
+    font-weight: bold;
     line-height: 20px;
     word-spacing: 0;
     color: #555;
     text-align: left;
+        -webkit-font-smoothing: antialiased;
+
 }
 
 .single-board-edit {

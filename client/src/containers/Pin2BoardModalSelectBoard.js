@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-//sam is the bomb
+
 import './Pin2Board.css'
 
 class Pin2BoardSelectBoard extends Component {
@@ -11,6 +11,7 @@ class Pin2BoardSelectBoard extends Component {
             <div>
                 <h3 className="Pin2Board_ChooseBoard">Choose board</h3>
                 <div className="Pin2Board_X" onClick={() => this.props.savePinExit()}></div>
+
             </div>
 
             <div className="Pin2Board_LowerRight">

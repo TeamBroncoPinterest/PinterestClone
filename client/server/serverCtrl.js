@@ -4,25 +4,25 @@ var db = app.get('db');
 module.exports = {
 
     searchFeed: function (req, res) {
-      const term = `%${req.params.term}%`.toLowerCase()
-      db.search_pins([term], function (err, response) {
-        if (!err) {
-          res.status(200).send(response);
-        } else {
-          console.log(err);
-        }
-      })
+        const term = `%${req.params.term}%`.toLowerCase()
+        db.search_pins([term], function (err, response) {
+            if (!err) {
+                res.status(200).send(response);
+            } else {
+                console.log(err);
+            }
+        })
 
     },
 
     getFeed: function (req, res) {
-      db.get_feed(function (err, response) {
-        if (!err) {
-          res.status(200).send(response);
-        } else {
-          console.log(err);
-        }
-      })
+        db.get_feed(function (err, response) {
+            if (!err) {
+                res.status(200).send(response);
+            } else {
+                console.log(err);
+            }
+        })
     },
 
 
@@ -32,13 +32,20 @@ module.exports = {
         db.validate_user_login([username, password], function (err, response) {
             if (!err && response[0] !== undefined) {
                 const id = response[0].id;
-                db.get_user([id], function (err, response) {
+                db.get_user([id], function (err, user) {
                     if (err) {
                         console.log(err)
                         res.send(err);
                     } else {
-                        console.log(response)
-                        res.status(200).send(response);
+                        db.get_pin([id], function (err, pins) {
+                            if (err) {
+                                console.log(err);
+                                res.send(err);
+                            } else {
+                                user[0].pins = pins;
+                                res.status(200).send(user[0]);
+                            }
+                        })
                     }
                 })
             } else {
@@ -76,11 +83,10 @@ module.exports = {
                                                         res.send(err);
                                                     } else {
                                                         user[0].pins = pins;
-                                                        console.log(user[0])
                                                         res.status(200).send(user[0]);
                                                     }
                                                 })
-                                                
+
                                             }
                                         })
                                     }

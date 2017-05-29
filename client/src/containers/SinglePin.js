@@ -19,10 +19,6 @@ class SinglePin extends Component {
     this.setState({ selected: true })
     this.props.selectPin(this.props.data)
       $('body').css('overflow', 'hidden');
-
-
-
-
   }
 
   exitPin = () => {

@@ -166,6 +166,10 @@
     height: 20px;
     width: 20px;
   }
+  .selected-pin-header {
+    position: sticky;
+    top: 0;
+  }
 }
 @media (max-width: 799px) {
   .selected-pin-control-button-close {

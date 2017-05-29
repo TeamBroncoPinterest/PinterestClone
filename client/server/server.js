@@ -25,7 +25,7 @@ var db = app.get('db');
 
 //USER
 app.post('/api/create_user', ctrl.createuser); //good
-app.post("/api/login", ctrl.validatelogin); //good
+app.post('/api/login', ctrl.validatelogin); //good
   app.get('/api/get_user/:id', ctrl.getuser); //good
 
 app.put('/api/update_user/:id', ctrl.updateuser); //good

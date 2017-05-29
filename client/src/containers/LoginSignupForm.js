@@ -3,7 +3,7 @@ import {reduxForm, Field} from 'redux-form';
 import {connect} from 'react-redux';
 import { Redirect} from 'react-router-dom';
 import {Link} from 'react-router-dom';
-import {createUser} from '../actions/userActions';
+import {createUser, validateLogin} from '../actions/userActions';
 import './LoginSignupForm.css';
 import logo from '../pics/Pinterest-Wordmark+Badge/RGB/badgeRGB.png';
 
@@ -17,12 +17,11 @@ class LoginSignupForm extends Component {
 
 
     login = (values) => {
-        console.log(values);
+        this.props.validateLogin(values);
     }
 
 
     signup = (values) => {
-        console.log(values);
         this.props.createUser(values);
     }
 
@@ -121,4 +120,4 @@ function mapStateToProps(store) {
 }
 LoginSignupForm = reduxForm({form: "loginForm"})(LoginSignupForm)
 
-export default connect(mapStateToProps, { createUser })(LoginSignupForm);
+export default connect(mapStateToProps, { createUser, validateLogin })(LoginSignupForm);

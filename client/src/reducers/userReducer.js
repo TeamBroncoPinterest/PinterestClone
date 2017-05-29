@@ -1,4 +1,4 @@
-import { CREATE_USER } from '../actions/userActions'
+import {CREATE_USER, VALIDATE_LOGIN} from '../actions/userActions'
 
 const INITIAL_STATE = {
   data: {},
@@ -6,11 +6,20 @@ const INITIAL_STATE = {
   error_message: ''
 }
 
-export default function(state = INITIAL_STATE, action) {
+export default function (state = INITIAL_STATE, action) {
   switch (action.type) {
     case CREATE_USER:
-      console.log(action.type, action.payload)
-      return { ...state, data: action.payload, loggedIn: true }
+      return {
+        ...state,
+        data: action.payload,
+        loggedIn: true
+      }
+    case VALIDATE_LOGIN:
+      return {
+        ...state,
+        data: action.payload,
+        loggedIn: true
+      }
     default:
       return state;
   }

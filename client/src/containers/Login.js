@@ -12,10 +12,12 @@ class Login extends Component {
   render() {
 
     return (
-      <div className="login-container">
-        <LoginSignupForm/>
 
-      </div>
+        <div className="login-container">
+          <div className="login-background animate-bg"></div>
+          <LoginSignupForm/>
+        </div>
+
     )
   }
 }

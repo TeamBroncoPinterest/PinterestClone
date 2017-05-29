@@ -1,17 +1,26 @@
 .login-container {
   height:100%;
   width:100%;
+
+}
+
+.login-background {
+  height:100%;
+  width:100%;
   background-color:#000000;
   background-image:url(https://s.pinimg.com/webapp/style/images/bg_multi_case_grid-9ede5d84.jpg);
   Background-position:0px -700px;
   Background-size:cover;
   Padding-bottom:300px;
   Position:fixed;
-  animation:scrollBgGridLinks 35s linear;
-  -mozkit-animation:scrollBgGridLinks 35s linear;
-  -webkit-animation:scrollBgGridLinks 35s linear;
-  Animation-fill-mode:forwards;
-  -webkit-animation-fill-mode:forwards;
-  -moz-animation-fill-mode:forwards;
 
+}
+
+.animate-bg {
+   animation: animate-move-bg 35s infinite;
+}
+
+@keyframes animate-move-bg {
+  0%   { transform: translateY(0px); }
+  100% { transform: translateY(-200px); }
 }

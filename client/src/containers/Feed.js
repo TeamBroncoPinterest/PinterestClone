@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 import SinglePin from './SinglePin';
 // import axios from 'axios';
 import './Feed.css';
@@ -23,7 +24,11 @@ class Feed extends Component {
   // }
 
   render() {
-    console.log(this.props.feed.feed);
+    if (!this.props.user.loggedIn) {
+      return (
+        < Redirect to="/login"/>
+      )
+    }
     let pins = <div></div>
     if (this.props.feed.feed.data){
         pins = this.props.feed.feed.data.map((val, ind) => {
@@ -42,7 +47,8 @@ class Feed extends Component {
 
 function mapStateToProps(store) {
   return {
-    feed: store.feed
+    feed: store.feed,
+    user: store.user
   }
 }
 

@@ -10,20 +10,10 @@ CREATE TABLE users (
     first varchar(50),
     last varchar(50),
     bio varchar(250) default 'I love pinterest.',
-    pincount integer,
-    boardcount integer,
     img varchar(100) default  'https://www.westdean.org.uk/images/profile-placeholder.jpg',
     boards JSON default '[]'
 );
 
-CREATE TABLE boards (
-    id serial primary key,
-    user_id int references userlogin(id),
-    name varchar(50),
-    description varchar(100),
-    pins JSON,
-    pincount integer
-);
 
 CREATE TABLE pins (
     id serial primary key,

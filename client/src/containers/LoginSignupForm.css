@@ -50,6 +50,16 @@
     /*background: pink;*/
 }
 
+.login-catologofideas {
+  margin:-10px 26px 30px;
+  margin-top: 5px;
+  Text-align:center;
+  Font-weight:bold;
+  Font-size:14px;
+  color:#b5b5b5;
+
+}
+
 .loginsignup-form-login-form {
     width: 100%;
     display: flex;

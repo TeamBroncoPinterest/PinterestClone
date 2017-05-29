@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
 import Pin2BoardCreateBoard from './Pin2BoardModalCreateBoard';
 import Pin2BoardSelectBoard from './Pin2BoardModalSelectBoard';
 
@@ -21,6 +23,7 @@ class Pin2BoardModal extends Component {
 
 
   render() {
+    const data = this.props.data
     return (
     <div className="Pin2Board_wrapper">
       <div className="Pin2Board_Box">
@@ -28,9 +31,9 @@ class Pin2BoardModal extends Component {
               <div className="Pin2Board_leftBox">
                   <div className="Pin2Board_PinInfo">
 
-                      <img className="Pin2Board_PinImg" alt="Pin Here" src="https://s-media-cache-ak0.pinimg.com/236x/21/21/83/2121834e020725e8849cacf5304f4fa1.jpg"/>
+                      <img className="Pin2Board_PinImg" alt="Pin Here" src={data.image.original.url}/>
                         <div>
-                              <p className="Pin2Board_PinDescription" role="textbox">Pin Description Here. Will need to make responsive based on pin that is selected.</p>
+                              <p className="Pin2Board_PinDescription" role="textbox">{data.note}</p>
                        </div>
                   </div>
               </div>
@@ -46,10 +49,14 @@ class Pin2BoardModal extends Component {
       </div>
     </div>
     )
-  } 
+  }
 }
 
 
+function mapStateToProps(store) {
+  return {
+    data: store.feed.selectedPin
+  }
+}
 
-
-export default Pin2BoardModal;
+export default connect(mapStateToProps)(Pin2BoardModal);

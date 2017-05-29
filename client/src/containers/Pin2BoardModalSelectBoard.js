@@ -10,7 +10,8 @@ class Pin2BoardSelectBoard extends Component {
         <div className="Pin2Board_rightBox">
             <div>
                 <h3 className="Pin2Board_ChooseBoard">Choose board</h3>
-                <div className="Pin2Board_X"></div>
+                <div className="Pin2Board_X" onClick={() => this.props.savePinExit()}></div>
+
             </div>
 
             <div className="Pin2Board_LowerRight">

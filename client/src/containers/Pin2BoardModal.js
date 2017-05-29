@@ -37,8 +37,8 @@ class Pin2BoardModal extends Component {
 
 
 
-        { (this.state.showBoards && <Pin2BoardCreateBoard createBoardExit={() => this.createBoardExit()}/>)
-        || <Pin2BoardSelectBoard createBoardClick={() => this.createBoardClick()} /> }
+        { (this.state.showBoards && <Pin2BoardCreateBoard createBoardExit={() => this.createBoardExit()} savePinExit={() => this.props.savePinExit()} />)
+        || <Pin2BoardSelectBoard createBoardClick={() => this.createBoardClick()} savePinExit={() => this.props.savePinExit()} /> }
 
 
 
@@ -46,7 +46,7 @@ class Pin2BoardModal extends Component {
       </div>
     </div>
     )
-  }
+  } 
 }
 
 

@@ -166,10 +166,15 @@ module.exports = {
             if (err) {
                 res.send(err);
             } else {
+
                 res.status(200).send(response);
             }
         })
     },
+
+
+
+
 }
 
 

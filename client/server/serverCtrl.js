@@ -50,8 +50,8 @@ module.exports = {
     createuser: function (req, res) {
         let username = req.body.username;
         let password = req.body.password;
-        let first = req.body.first;
-        let last = req.body.last;
+        let first = req.body.firstname;
+        let last = req.body.lastname;
 
         db.validate_username([username], function (err, response) {
             if (!err && response[0] === undefined) {
@@ -65,13 +65,22 @@ module.exports = {
                                     if (err) {
                                         res.send(err);
                                     } else {
-                                        db.get_user([id], function (err, response) {
+                                        db.get_user([id], function (err, user) {
                                             if (err) {
                                                 console.log(err)
                                                 res.send(err);
                                             } else {
-                                                console.log(response)
-                                                res.status(200).send(response);
+                                                db.get_pin([id], function (err, pins) {
+                                                    if (err) {
+                                                        console.log(err);
+                                                        res.send(err);
+                                                    } else {
+                                                        user[0].pins = pins;
+                                                        console.log(user[0])
+                                                        res.status(200).send(user[0]);
+                                                    }
+                                                })
+                                                
                                             }
                                         })
                                     }

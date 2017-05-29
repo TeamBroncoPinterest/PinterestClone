@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import {Redirect} from 'react-router-dom';
 import CreateBoard from './CreateBoard';
 import SingleBoard from './SingleBoard'
-
 
 //Stylings and Pics
 import './Profile.css';
@@ -14,18 +15,23 @@ class Profile extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { create: false }
+    this.state = {
+      create: false
+    }
   }
 
   createBoard = () => {
-    this.setState({ create: true })
+    this.setState({create: true})
   }
 
   closeWindow = () => {
-    this.setState({ create: false })
+    this.setState({create: false})
   }
 
   render() {
+    if (!this.props.user.loggedIn) {
+      return (< Redirect to = "/login" />)
+    }
     const data = {
       first: 'Cameron',
       bio: 'I <3 Pinterest',
@@ -33,9 +39,11 @@ class Profile extends Component {
       boards: []
     }
 
-    const boards = data.boards.map((v) => {
-      return <SingleBoard data={v} key={v.name} />
-    })
+    const boards = data
+      .boards
+      .map((v) => {
+        return <SingleBoard data={v} key={v.name}/>
+      })
 
     return (
       <div className="profile-container">
@@ -69,23 +77,27 @@ class Profile extends Component {
           </div>
         </div>
         <div className="profile-boards-pins">
-          { this.state.create && <CreateBoard closeWindow={() => this.closeWindow()} /> }
-          <AddBoard createBoard={() => this.createBoard()}  />
+          {this.state.create && <CreateBoard closeWindow={() => this.closeWindow()}/>}
+          <AddBoard createBoard={() => this.createBoard()}/>
           <SingleBoard/>
-          <SingleBoard />
-          <SingleBoard />
-          <SingleBoard />
-          <SingleBoard />
-          <SingleBoard />
-            <SingleBoard />
-            <SingleBoard />
-            <SingleBoard />
-            <SingleBoard />
-            <SingleBoard />
+          <SingleBoard/>
+          <SingleBoard/>
+          <SingleBoard/>
+          <SingleBoard/>
+          <SingleBoard/>
+          <SingleBoard/>
+          <SingleBoard/>
+          <SingleBoard/>
+          <SingleBoard/>
+          <SingleBoard/>
         </div>
       </div>
     )
   }
 }
 
-export default Profile;
+function mapStateToProps(store) {
+  return {user: store.user}
+}
+
+export default connect(mapStateToProps)(Profile);

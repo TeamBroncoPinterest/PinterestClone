@@ -119,13 +119,13 @@
 
 .loginsignup-form-login-noaccount-container {
     margin-top: 30px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     border-top: 1px solid rgb(239, 239, 239);
     width: 100%;
 }
 
 .loginsignup-form-login-noaccount {
-    margin-top: 10px;
+    margin-top: 20px;
     color: rgb(33, 25, 34);
     font-size: 13px;
     text-align: center;

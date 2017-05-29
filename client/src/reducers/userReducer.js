@@ -1,4 +1,4 @@
-import {CREATE_USER, VALIDATE_LOGIN} from '../actions/userActions'
+import {CREATE_USER, VALIDATE_LOGIN, UPDATE_BOARDS} from '../actions/userActions'
 
 const INITIAL_STATE = {
   data: {},

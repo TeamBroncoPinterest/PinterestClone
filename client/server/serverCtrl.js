@@ -154,9 +154,9 @@ module.exports = {
 
 
     updateboard: function (req, res) {
-        console.log(req.params, req.body)
         let user_id = req.params.id;
-        let boards = req.body.boards;
+        let boards = JSON.stringify(req.body.boards);
+        console.log(user_id, boards);
         db.update_board([user_id, boards], function (err, response) {
             if (err) {
                 res.send(err);

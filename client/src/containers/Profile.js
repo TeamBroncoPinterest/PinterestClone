@@ -29,6 +29,7 @@ class Profile extends Component {
   }
 
   render() {
+    console.log(this.props.user)
     if (!this.props.user.loggedIn) {
       return (< Redirect to = "/login" />)
     }

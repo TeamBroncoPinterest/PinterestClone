@@ -41,6 +41,7 @@ class LoginSignupForm extends Component {
                     </div>
                     {!this.state.signup && <div className="loginsignup-form-inner-login-container">
                         <div className="loginsignup-form-login-welcome">Welcome to Pinterest</div>
+                        <div className="login-catologofideas">The world&#8217;s catalog of ideas</div>
                         <form onSubmit={handleSubmit(this.login)} className="loginsignup-form-login-form">
                             <Field
                                 className="loginsignup-form-login-form-username"

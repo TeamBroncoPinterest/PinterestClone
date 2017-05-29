@@ -12,7 +12,7 @@ import share from '../pics/share-icon.svg'
 
 
 class SelectedPin extends Component {
-
+  
 
   render() {
     const data = this.props.data;

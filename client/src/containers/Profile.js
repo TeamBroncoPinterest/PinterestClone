@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-
+import CreateBoard from './CreateBoard';
 import SingleBoard from './SingleBoard'
+
 
 //Stylings and Pics
 import './Profile.css';
@@ -10,6 +11,20 @@ import blankProfile from '../pics/blank-profile.png';
 import AddBoard from './AddBoard';
 
 class Profile extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = { create: false }
+  }
+
+  createBoard = () => {
+    this.setState({ create: true })
+  }
+
+  closeWindow = () => {
+    this.setState({ create: false })
+  }
+
   render() {
     const data = {
       first: 'Cameron',
@@ -54,8 +69,8 @@ class Profile extends Component {
           </div>
         </div>
         <div className="profile-boards-pins">
-
-          <AddBoard/>
+          { this.state.create && <CreateBoard closeWindow={() => this.closeWindow()} /> }
+          <AddBoard createBoard={() => this.createBoard()}  />
           <SingleBoard/>
           <SingleBoard />
           <SingleBoard />

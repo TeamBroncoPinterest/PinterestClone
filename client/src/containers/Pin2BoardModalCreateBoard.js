@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import SelectedPin from './SelectedPin'
+// import SelectedPin from './SelectedPin'
 
 
 import './Pin2Board.css'

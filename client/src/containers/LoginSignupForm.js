@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {reduxForm, Field} from 'redux-form';
 import {connect} from 'react-redux';
 import { Redirect} from 'react-router-dom';
-import {Link} from 'react-router-dom';
+// import {Link} from 'react-router-dom';
 import {createUser, validateLogin} from '../actions/userActions';
 import './LoginSignupForm.css';
 import logo from '../pics/Pinterest-Wordmark+Badge/RGB/badgeRGB.png';

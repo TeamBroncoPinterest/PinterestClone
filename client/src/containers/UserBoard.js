@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import {connect} from 'react-redux';
-import {Redirect} from 'react-router-dom';
+// import {connect} from 'react-redux';
+// import {Redirect} from 'react-router-dom';
 
 
 //Stylings and Pics
@@ -30,7 +30,7 @@ class UserBoard extends Component {
                         <p className="board-number"><b>9 </b> Pins</p>
                         <p className="board-description"><b>Board description here</b></p>
                       </div>
-                      <img src={blankProfile} className="board_userImg" />
+                      <img alt="" src={blankProfile} className="board_userImg" />
                   </div>
               </div>
               <div className="board-grid">

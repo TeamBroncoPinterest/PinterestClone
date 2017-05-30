@@ -12,7 +12,6 @@ module.exports = {
                 console.log(err);
             }
         })
-
     },
 
     getFeed: function (req, res) {

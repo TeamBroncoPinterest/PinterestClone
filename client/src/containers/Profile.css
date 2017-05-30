@@ -18,7 +18,7 @@
   position: fixed;
   display: flex;
   align-items: center;
-  z-index: 2;
+  
 }
 .profile-nut {
   height: 26px;
@@ -99,6 +99,7 @@
   width: 325px;
   display: flex;
   flex-flow: row wrap;
+  z-index: 0;
 }
 
 

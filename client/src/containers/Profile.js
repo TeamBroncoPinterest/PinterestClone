@@ -3,7 +3,8 @@ import {connect} from 'react-redux';
 import {Redirect} from 'react-router-dom';
 
 import CreateBoard from './CreateBoard';
-import SingleBoard from './SingleBoard'
+import SingleBoard from './SingleBoard';
+import UpdateBoard from './updateBoardModal';
 
 //Stylings and Pics
 import './Profile.css';
@@ -17,7 +18,8 @@ class Profile extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      create: false
+      create: false,
+      edit: false
     }
   }
 
@@ -27,6 +29,14 @@ class Profile extends Component {
 
   closeWindow = () => {
     this.setState({create: false})
+  }
+
+  editBoard = () => {
+    this.setState({edit: true})
+  }
+
+  closeEditWindow = () => {
+    this.setState({edit: false})
   }
 
   render() {
@@ -80,8 +90,14 @@ class Profile extends Component {
         </div>
         <div className="profile-boards-pins">
           {this.state.create && <CreateBoard closeWindow={() => this.closeWindow()}/>}
+          {this.state.edit && <UpdateBoard closeEditWindow={() => this.closeEditWindow()}/>}
           <AddBoard createBoard={() => this.createBoard()}/>
+
+          <SingleBoard editBoard={() => this.editBoard()}/>
           <SingleBoard/>
+
+          <SingleBoard/>
+
           <SingleBoard/>
           <SingleBoard/>
           <SingleBoard/>

@@ -11,10 +11,12 @@ import Nav from './containers/Nav';
 import Login from './containers/Login';
 import Feed from './containers/Feed';
 import Profile from './containers/Profile';
+import UserBoard from './containers/UserBoard';
+
 
 
 class App extends Component {
-  
+
   componentWillMount() {
     // window.PDK.init({
     //     appId: 4901570145085834798,
@@ -35,6 +37,7 @@ class App extends Component {
             <Route path='/login' component={Login} />
             <Route path='/' exact={true} component={Feed} />
             <Route path='/profile' component={Profile} />
+            <Route path='/board' component={UserBoard} />
           </div>
         </div>
       </Router>

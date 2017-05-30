@@ -137,9 +137,17 @@
 }
 
 @media (max-width: 600px) {
+<<<<<<< HEAD
   .UpdateBoard_Box {
     width: auto;
     max-width: 600px;
     height: 250px;
   }
 }
+=======
+.UpdateBoard_Box {
+  width: auto;
+  max-width:600px;
+  height:250px;
+}}
+>>>>>>> master

@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {Redirect} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import CreateBoard from './CreateBoard';
 import SingleBoard from './SingleBoard';
 import UpdateBoard from './updateBoardModal';
@@ -92,6 +93,7 @@ class Profile extends Component {
           {this.state.edit && <UpdateBoard closeEditWindow={() => this.closeEditWindow()}/>}
           <AddBoard createBoard={() => this.createBoard()}/>
           <SingleBoard editBoard={() => this.editBoard()}/>
+           <Link to="/board"><SingleBoard/></Link>
           <SingleBoard/>
           <SingleBoard/>
           <SingleBoard/>

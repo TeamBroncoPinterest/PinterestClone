@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { selectPin } from '../actions/feedActions'
 
 import './SelectedPin.css';
 import blankProfilePic from '../pics/blank-profile.png';
@@ -21,6 +22,7 @@ class SelectedPin extends Component {
 
   savePin = () => {
     this.setState({ savePin: true })
+    this.props.selectPin(this.props.data)
   }
 
   savePinExit = () => {
@@ -71,4 +73,4 @@ function mapStateToProps(store) {
     data: store.feed.selectedPin
   }
 }
-export default connect(mapStateToProps)(SelectedPin)
+export default connect(mapStateToProps, { selectPin })(SelectedPin)

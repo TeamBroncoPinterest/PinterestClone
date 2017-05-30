@@ -30,6 +30,7 @@ class SinglePin extends Component {
 
   savePin = () => {
     this.setState({ savePin: true })
+    this.props.selectPin(this.props.data)
   }
 
   savePinExit = () => {
@@ -45,7 +46,7 @@ class SinglePin extends Component {
     } else if (data.metadata.link) {
       title = data.metadata.link.title;
     }
-    return ( 
+    return (
       <div className="single-pin-shell">
         <div className="single-pin-outer-container">
           <div className="single-pin-inner-container">

@@ -30,26 +30,27 @@ module.exports = {
         const username = req.body.username;
         const password = req.body.password;
         db.validate_user_login([username, password], function (err, response) {
-            if (!err && response[0] !== undefined) {
+          console.log(response[0], response);
+            if (!err && response[0]) {
+              console.log('logging');
                 const id = response[0].id;
                 db.get_user([id], function (err, user) {
                     if (err) {
                         console.log(err)
-                        res.send(err);
                     } else {
                         db.get_pin([id], function (err, pins) {
-                            if (err) {
-                                console.log(err);
-                                res.send(err);
+                            if (!err) {
+                              user[0].pins = pins;
+                              res.status(200).send(user[0]);
                             } else {
-                                user[0].pins = pins;
-                                res.status(200).send(user[0]);
+                              console.log(err);
                             }
                         })
                     }
                 })
             } else {
-                res.send(err);
+              console.log(err);
+              res.status(403).send();
             }
         })
     },
@@ -70,17 +71,16 @@ module.exports = {
                                 const id = response[0].id
                                 db.create_user([id, first, last], function (err) {
                                     if (err) {
-                                        res.send(err);
+                                        console.log(err);
                                     } else {
                                         db.get_user([id], function (err, user) {
                                             if (err) {
                                                 console.log(err)
-                                                res.send(err);
+                                                console.log(err);
                                             } else {
                                                 db.get_pin([id], function (err, pins) {
                                                     if (err) {
                                                         console.log(err);
-                                                        res.send(err);
                                                     } else {
                                                         user[0].pins = pins;
                                                         res.status(200).send(user[0]);
@@ -92,17 +92,17 @@ module.exports = {
                                     }
                                 })
                             } else {
-                                res.send(err);
+                                console.log(err);
                             }
                         })
                     } else {
-                        res.send(err);
+                        console.log(err);
                     }
                 })
 
 
             } else {
-                res.send(err);
+                console.log(err);
             }
         })
     },
@@ -116,7 +116,7 @@ module.exports = {
 
         db.update_user([user_id, first, last, bio, img], function (err, response) {
             if (err) {
-                res.send(err);
+                console.log(err);
             } else {
                 res.status(200).send(response);
             }
@@ -126,8 +126,7 @@ module.exports = {
     getuser: function (req, res) {
         db.get_user([req.params.id], function (err, response) {
             if (err) {
-                console.log(err)
-                res.send(err);
+                console.log(err);
             } else {
                 console.log(response)
                 res.status(200).send(response);
@@ -139,11 +138,11 @@ module.exports = {
         console.log(req.params, req.body);
         db.delete_user([req.params.id], function (err, response) {
             if (err) {
-                res.send(err);
+                console.log(err);
             } else {
                 db.delete_user_login([req.params.id], function (err, response) {
                     if (err) {
-                        res.send(err);
+                        console.log(err);
                     } else {
                         res.send(response);
                     }
@@ -159,28 +158,50 @@ module.exports = {
         console.log(user_id, boards);
         db.update_board([user_id, boards], function (err, response) {
             if (err) {
-                res.send(err);
+                console.log(err);
             } else {
                 res.status(200).send(response);
             }
         })
     },
 
-
-    getpin: function (req, res) {
-        db.get_pin([req.params.id], function (err, response) {
-            if (err) {
-                res.send(err);
-            } else {
-
-                res.status(200).send(response);
-            }
-        })
+    createPin: function (req, res) {
+      console.log(req.body);
+      const { user_id, creator, image, original_link, note, board, metadata } = req.body;
+      db.create_pin([ user_id, creator, image, original_link, note, board, metadata], function (err, response) {
+        if (!err) {
+          console.log(response);
+          res.status(200).send()
+        } else {
+          console.log(err);
+          res.status(500).send()
+        }
+      })
     },
 
+    editPin: function (req, res) {
+      const { id, board, note } = req.body;
+      db.edit_pin([id, board, note], function (err, response) {
+        if (!err) {
+          res.status(200).send();
+        } else {
+          console.log(err);
+          res.status(500).send()
+        }
+      })
+    },
 
-
-
+    deletePin: function (req, res) {
+      const { id } = req.body;
+      db.delete_pin([id], function (err, response) {
+        if (!err) {
+          res.status(200).send();
+        } else {
+          console.log(err);
+          res.status(500).send()
+        }
+      })
+    },
 }
 
 

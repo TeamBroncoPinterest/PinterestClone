@@ -38,8 +38,9 @@ app.get('/api/feed', ctrl.getFeed) //good
 //search
 app.get('/api/feed/:term', ctrl.searchFeed)
 //user pins
-app.get('/api/get_pin/:id', ctrl.getpin);  //good
-
+app.post('/api/create_pin', ctrl.createPin);
+app.put('/api/edit_pin', ctrl.editPin);
+app.delete('/api/delete_pin', ctrl.deletePin);
 
 // app.post('/api/pins', ctrl.storePins)
 

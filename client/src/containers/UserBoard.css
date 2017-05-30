@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400');
+
+.bar{
+  width: 100%;
+  height: 73px;
+  background-color: navy;
+}
+.board-wrapper {
+  padding -top: 60px;
+  display:  block;
+  width: 100%;
+  height: 100%;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.board-mainContainer {
+  display: block;
+  width: 744px;
+  min-height: 816px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.board-barDiv {
+  display: block;
+  margin: auto;
+  max-width: 744px;
+  position: relative;
+}
+
+.board-fixedBar {
+  background-color: rgba(255, 255, 255, 0.95);
+  height: 64px;
+  width: 100%;
+  position: fixed;
+  top: 73px;
+  transform: translateZ(0);
+  z-index: 103;
+  display: flex;
+
+}
+
+.board-iconDiv{
+  -webkit-box-orient: horizontal;
+  flex-direction: row;
+  box-sizing: border-box;
+  height: 48px;
+  padding: 10px 0;
+  position: relative
+}
+
+.board-icons1 {
+  background: url(https://image.ibb.co/km1ctF/editPen1.png);
+  background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+  height: 32px;
+  width: 32px;
+  padding: 0;
+  border: 0;
+  cursor: pointer;
+  -webkit-appearance: button;
+  line-height: normal;
+}
+
+.board-icons2 {
+  background: url(https://image.ibb.co/b0YqDF/movePin1.png);
+  background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+  height: 32px;
+  width: 32px;
+  padding: 0;
+  border: 0;
+  cursor: pointer;
+  -webkit-appearance: button;
+  line-height: normal;
+  margin-left: 15px;
+}
+
+.board-icons3 {
+  background: url(https://image.ibb.co/ej8e7a/three_Dots1.png);
+  background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+  height: 32px;
+  width: 32px;
+  padding: 0;
+  border: 0;
+  cursor: pointer;
+  -webkit-appearance: button;
+  line-height: normal;
+  margin-left: 15px;
+}
+
+.board-title {
+  font-size: 36px;
+  font-weight: bold;
+  color: #555;
+  letter-spacing: -1.25px;
+  line-height: 42px;
+  word-spacing: -2.25px;
+  margin-bottom: 0;
+  margin-top: 90px;
+}
+
+.board-header {
+  display: block;
+}
+
+.board_boardinfodiv {
+  box-sizing: border-box;
+  display: inline-block;
+  height: 120px;
+  width: 744px;
+  margin-top: 15px;
+}
+
+.board-data {
+  display: inline-block;
+  float: left;
+}
+
+.board-number {
+  font-size: 13px;
+  letter-spacing: -.1px;
+  line-height: 14px;
+  word-spacing: 0;
+  margin-bottom: 0;
+}
+
+.board-description {
+   font-size: 15px;
+  letter-spacing: -.1px;
+  line-height: 14px;
+  word-spacing: 0;
+  margin-top: 5px;
+}
+
+.board_userImg {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.33) inset;
+    content: " ";
+    float: right;
+}
+
+.board-grid{
+    width: 756px;
+    height: auto;
+    margin: 0 auto;
+    position: relative;
+    display: block;
+}

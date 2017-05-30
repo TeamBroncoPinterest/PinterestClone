@@ -51,11 +51,11 @@ class Profile extends Component {
       boards: []
     }
 
-    const boards = data
-      .boards
-      .map((v) => {
-        return <SingleBoard data={v} key={v.name}/>
-      })
+    // const boards = data
+    //   .boards
+    //   .map((v) => {
+    //     return <SingleBoard data={v} key={v.name}/>
+    //   })
 
     return (
       <div className="profile-container">

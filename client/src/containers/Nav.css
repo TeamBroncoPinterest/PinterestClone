@@ -53,6 +53,9 @@ svg,path {
   height: 20px;
   padding: 0px 16px;
 }
+.nav-form {
+  width: 100%;
+}
 .nav-search-bar {
   background-color: transparent;
   border: none;

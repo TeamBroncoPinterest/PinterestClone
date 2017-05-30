@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+
+import { searchFeed } from '../actions/feedActions';
 
 import './Nav.css';
 import magnifyingGlass from '../pics/magnifying-glass.png';
@@ -8,6 +11,16 @@ import profileIcon from '../pics/profile.png'
 import logo from '../pics/Pinterest-Wordmark+Badge/RGB/badgeRGB.png';
 
 class Nav extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { term: '' }
+  }
+
+  search = () => {
+    console.log(this.state.term);
+    this.props.searchFeed(this.state.term);
+  }
+
   render() {
     return (
       <div className="nav-container">
@@ -18,7 +31,9 @@ class Nav extends Component {
           </div>
           <div className="nav-search-container">
             <img className="nav-magnifying-glass" src={magnifyingGlass} alt="" />
-            <input className="nav-search-bar" placeholder="Search" />
+            <form className="nav-form" onSubmit={() => this.search()}>
+              <input className="nav-search-bar" value={this.state.term} onChange={(e) => this.setState({ term: e.target.value })} placeholder="Search" />
+            </form>
           </div>
         </div>
         <nav className="nav-right">
@@ -32,4 +47,4 @@ class Nav extends Component {
   }
 }
 
-export default Nav;
+export default connect(null, { searchFeed })(Nav);

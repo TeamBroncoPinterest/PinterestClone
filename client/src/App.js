@@ -29,10 +29,15 @@ class App extends Component {
 
 
   render() {
+    let showNav = false;
+    if (this.props.user.loggedIn) {
+      showNav = this.props.user.loggedIn;
+    }
+    console.log(this.props.user);
     return (
       <Router>
         <div>
-          <Nav />
+          { showNav && <Nav />}
           <div className='belowNav'>
             <Route path='/login' component={Login} />
             <Route path='/' exact={true} component={Feed} />
@@ -49,6 +54,7 @@ class App extends Component {
 function mapStateToProps(store) {
   return {
     feed: store.feed,
+    user: store.user
   }
 }
 

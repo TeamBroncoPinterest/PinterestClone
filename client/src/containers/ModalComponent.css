@@ -47,6 +47,7 @@
   width: 12px;
   background: url(https://s.pinimg.com/webapp/style/images/webapp-common-main-1x-c20ceaff.png) -261px -242px no-repeat;
   float: right;
+  cursor: pointer;
   margin: -6px;
     position: absolute;
     right: 26px;

@@ -19,7 +19,7 @@ class SingleBoard extends Component {
                         </div>
                         <div className="single-board-description-edit-container">
                             <p className="single-board-title">Board Name</p>
-                            <button className="single-board-edit">Edit</button>
+                            <button className="single-board-edit" onClick={() => this.props.editBoard()}>Edit</button>
                         </div>
                     </div>
                 </div>

@@ -1,40 +1,44 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400');
-
 .UpdateBoard_wrapper {
   width: 100%;
   height: 100vh;
-  background-color: rgba(226, 228, 228, 0.9);
+  background-color: rgba(0, 0, 0, 0.6);
   opacity: 1;
   font-family: 'Open Sans', sans-serif;
+  z-index: 800;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 .UpdateBoard_Box {
   width: auto;
-  max-width:600px;
+  max-width: 600px;
   height: 265px;
   background-color: #ffffff;
   position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   border-radius: 6px;
-  margin:  auto;
+  margin: auto;
   padding-left: 20px;
   padding-right: 20px;
   padding-bottom: 20px;
 }
 
-
 .UpdateBoard_TopBox {
- max- height: 54.11px;
+  max- height: 54.11px;
   border-bottom: 1px solid #dfdfdf;
 }
 
 .UpdateBoard_title {
-   font-size: 20px;
+  font-size: 20px;
   font-family: 'Open Sans', sans-serif;
-   color: #333;
+  color: #333;
   margin-top: 15px;
   margin-bottom: 15px;
 }
@@ -44,59 +48,51 @@
   width: 12px;
   background: url(https://s.pinimg.com/webapp/style/images/webapp-common-main-1x-c20ceaff.png) -261px -242px no-repeat;
   float: right;
+  cursor: pointer;
   margin: -6px;
-    position: absolute;
-    right: 26px;
-    top: 33px;
+  position: absolute;
+  right: 26px;
+  top: 33px;
 }
 
-.UpdateBoard_CreateBroard  {
+.UpdateBoard_CreateBroard {
   height: 62.11 px;
-  font-size:16px;
+  font-size: 16px;
   font-family: 'Open Sans', sans-serif;
-
 }
 
-
-
-.UpdateBoard_Name{
+.UpdateBoard_Name {
   color: #5e5e5e;
-  float:left;
+  float: left;
   width: 140px;
-
 }
-
-
 
 .UpdateBoard_Input {
   float: left;
   background-color: #f3f3f3;
-    background: -webkit-linear-gradient(#f0f0f0, #f5f5f5);
-    background: linear-gradient(#f0f0f0, #f5f5f5);
-    box-sizing: border-box;
-    width: 73%;
-    border-radius: 3px;
-    border: 1px solid #d6d3ce;
-    box-shadow: 0 0 3px rgba(0, 0, 0, 0.12) inset;
-    color: #5e5e5e;
-    font-size: 14px;
-    font-family: 'Open Sans', sans-serif;
-    padding: 7px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+  background: -webkit-linear-gradient(#f0f0f0, #f5f5f5);
+  background: linear-gradient(#f0f0f0, #f5f5f5);
+  box-sizing: border-box;
+  width: 73%;
+  border-radius: 3px;
+  border: 1px solid #d6d3ce;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.12) inset;
+  color: #5e5e5e;
+  font-size: 14px;
+  font-family: 'Open Sans', sans-serif;
+  padding: 7px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
-
 
 .UpdateBoard_Input:focus {
-     background-color: #ffffff;
+  background-color: #ffffff;
 }
-
 
 .UpdateBoard_ButtonBox {
   height: 57.44 px;
-  font-size:16px;
+  font-size: 16px;
   font-family: 'Open Sans', sans-serif;
-
 }
 
 .Buttons_Component {
@@ -105,31 +101,31 @@
   float: right;
 }
 
-.create_button{
+.create_button {
   color: #fff;
   font-size: 16px;
   background-color: #bd081c;
-   border: none;
-    border-radius: 4px;
-    box-shadow: none;
-    padding: 10px 14px ;
-    position: relative;
-    text-shadow: nonet;
-
+  border: none;
+  border-radius: 4px;
+  box-shadow: none;
+  padding: 10px 14px;
+  position: relative;
+  text-shadow: nonet;
+  cursor: pointer;
 }
 
-.cancel_button{
+.cancel_button {
   color: #5e5e5e;
   font-size: 16px;
   background-color: #efefef;
-   border: none;
-    border-radius: 4px;
-    box-shadow: none;
-    padding: 10px 14px ;
-    position: relative;
-    text-shadow: nonet;
+  border: none;
+  border-radius: 4px;
+  box-shadow: none;
+  padding: 10px 14px;
+  position: relative;
+  text-shadow: nonet;
   margin-right: 5px;
-
+  cursor: pointer;
 }
 
 .CreateBoard_cancel_button:hover {
@@ -140,10 +136,10 @@
   background-color: #a30718;
 }
 
-
 @media (max-width: 600px) {
-.UpdateBoard_Box {
-  width: auto;
-  max-width:600px;
-  height:250px;
+  .UpdateBoard_Box {
+    width: auto;
+    max-width: 600px;
+    height: 250px;
+  }
 }

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {Redirect} from 'react-router-dom';
-import { Link } from 'react-router-dom';
+
 import CreateBoard from './CreateBoard';
 import SingleBoard from './SingleBoard'
 
@@ -81,7 +81,7 @@ class Profile extends Component {
         <div className="profile-boards-pins">
           {this.state.create && <CreateBoard closeWindow={() => this.closeWindow()}/>}
           <AddBoard createBoard={() => this.createBoard()}/>
-           <Link to="/board"><SingleBoard/></Link>
+          <SingleBoard/>
           <SingleBoard/>
           <SingleBoard/>
           <SingleBoard/>

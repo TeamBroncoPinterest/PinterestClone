@@ -106,7 +106,8 @@ class LoginSignupForm extends Component {
                                 </span>
                             </div>
                         </div>
-                    </div>}
+                    </div>
+                  }
                 </div>
             </div>
         )

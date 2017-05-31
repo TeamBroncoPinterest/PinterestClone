@@ -3,7 +3,7 @@ export const CREATE_USER = 'CREATE_USER';
 export const VALIDATE_LOGIN = 'VALIDATE_LOGIN';
 export const UPDATE_BOARDS = 'UPDATE_BOARDS';
 export const LOGIN_ERROR = 'LOGIN_ERROR';
-
+export const SELECT_BOARD = 'SELECT_BOARD';
 export const CREATE_PIN = 'CREATE_PIN';
 export const EDIT_PIN = 'EDIT_PIN';
 export const DELETE_PIN = 'DELETE_PIN';
@@ -90,4 +90,12 @@ export function deletePin(pinID) {
         })
       })
   }
+}
+
+export function selectBoard(data){
+  return {
+    type: SELECT_BOARD,
+    payload: data
+  }
+
 }

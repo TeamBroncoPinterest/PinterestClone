@@ -45,7 +45,7 @@ class Pin2BoardModal extends Component {
 
                       <img className="Pin2Board_PinImg" alt="Pin Here" src={data.image.original.url}/>
                         <div>
-                              <textarea onChange={(e) => this.setState({note: e.target.value})} className="Pin2Board_PinDescription" role="textbox" value={this.state.note} />
+                              <textarea onChange={(e) => this.setState({note: e.target.value})} className="Pin2Board_PinDescription" role=" " value={this.state.note} />
                        </div>
                   </div>
               </div>

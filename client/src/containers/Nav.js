@@ -17,7 +17,6 @@ class Nav extends Component {
   }
 
   search = () => {
-    console.log(this.state.term);
     this.props.searchFeed(this.state.term);
   }
 

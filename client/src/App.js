@@ -33,7 +33,6 @@ class App extends Component {
     if (this.props.user.loggedIn) {
       showNav = this.props.user.loggedIn;
     }
-    console.log(this.props.user);
     return (
       <Router>
         <div>

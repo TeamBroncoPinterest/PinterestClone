@@ -4,13 +4,15 @@ import {CREATE_USER,
   LOGIN_ERROR,
   CREATE_PIN,
   EDIT_PIN,
-  DELETE_PIN
+  DELETE_PIN,
+  SELECT_BOARD
 } from '../actions/userActions'
 
 const INITIAL_STATE = {
   data: {},
   loggedIn: false,
-  error_message: ''
+  error_message: '',
+  selectedBoard: {}
 }
 
 export default function (state = INITIAL_STATE, action) {
@@ -39,6 +41,9 @@ export default function (state = INITIAL_STATE, action) {
       break;
     case DELETE_PIN:
       break;
+    case SELECT_BOARD:
+      return {
+        ...state, selectedBoard: action.payload }
     default:
       return state;
   }

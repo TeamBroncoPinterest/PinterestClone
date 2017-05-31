@@ -1,20 +1,26 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { selectBoard } from '../actions/userActions'
 import './SingleBoard.css';
 
 class SingleBoard extends Component {
+  selectBoard = () => {
+    this.props.selectBoard(this.props.data)
+  }
     render() {
         const data = this.props.data;
+        const pins = data.pins[0] ? data.pins[0].image.original.url : '';
+
         return (
           <div className="single-board-shell-container">
             <div className="single-board-shell">
                 <div className="single-board-outer-container">
                     <div className="single-board-inner-container">
-                        <Link to="/board"><div className="single-board-pics-container">
+                        <Link to="/board" onClick={() => this.selectBoard()}><div className="single-board-pics-container">
                             <img
                               alt=""
-                              src={data.img}
+                              src={pins}
                               className="single-board-pic"
                             />
                         </div></Link>
@@ -34,4 +40,4 @@ function mapStateToProps(store) {
     return {user: store.user}
 }
 
-export default connect(mapStateToProps)(SingleBoard);
+export default connect(mapStateToProps, {selectBoard} )(SingleBoard);

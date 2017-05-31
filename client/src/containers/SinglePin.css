@@ -89,13 +89,15 @@ p {
   top: 10px;
   right: 10px;
   display: none;
-  color: #FFFFFF;
+  color: #efefef;
   background: #BD081C;
   border: none;
-  border-radius: 5px;
-  padding: 8px;
-  font-size: 14px;
+  border-radius: 4px;
+  padding: 7px 8px;
+  font-size: 17px;
+  font-weight: bold;
   align-items: center;
+  white-space: nowrap;
   cursor: pointer;
   z-index: 5;
 }

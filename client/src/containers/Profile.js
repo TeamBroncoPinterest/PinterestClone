@@ -44,10 +44,9 @@ class Profile extends Component {
       return (< Redirect to = "/login" />)
     }
     const data = {
-      first: 'Cameron',
-      bio: 'I <3 Pinterest',
+      first: this.props.user.data.first + ' ' + this.props.user.data.last,
+      bio: this.props.user.data.bio,
       img: blankProfile,
-      boards: []
     }
 
     // const boards = data   .boards   .map((v) => {     return <SingleBoard
@@ -55,7 +54,12 @@ class Profile extends Component {
 
     let boards = <div></div>
     if (this.props.user.data.boards) {
-      boards = this.props.user.data.boards.map((val, ind) => {return <SingleBoard data={val} key={val.name} editBoard={() => this.editBoard()}/>
+      boards = this.props.user.data.boards.map((val, ind) => {
+        let boardPins = this.props.user.data.pins.filter( v => {
+          return v.board.name === val.name
+        })
+        val.pins = boardPins
+        return <SingleBoard data={val} key={val.name} editBoard={() => this.editBoard()}/>
     })
   }
 

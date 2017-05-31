@@ -40,7 +40,15 @@ class SinglePin extends Component {
 
   render() {
     const data = this.props.data
-    let title = ''
+    let title = '';
+
+    let url = data.original_link;
+
+    url = url.replace('http://', '')
+    url = url.replace('https://', '')
+    url = url.replace('www.', '')
+    url = url.slice(0, url.indexOf('/'));
+
     if (data.metadata.article) {
       title = data.metadata.article.name
     } else if (data.metadata.link) {
@@ -55,7 +63,7 @@ class SinglePin extends Component {
               <img className="single-pin-pic" src={data.image.original.url} alt="" />
               <button onClick={() => this.savePin()} className="single-pin-save"><img className="single-pin-save-pin" src={pin} alt="pin"/>Save</button>
               <div className="dimGradient">
-                <a><p><span>{data.original_link}</span></p></a>
+                <a><p><span>{url}</span></p></a>
               </div>
               <a className="dimOverlay" onClick={() => this.selectPin()}><div></div></a>
             </div>

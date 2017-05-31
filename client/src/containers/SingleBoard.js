@@ -11,6 +11,7 @@ class SingleBoard extends Component {
     render() {
         const data = this.props.data;
         const pins = data.pins[0] ? data.pins[0].image.original.url : '';
+
         return (
           <div className="single-board-shell-container">
             <div className="single-board-shell">

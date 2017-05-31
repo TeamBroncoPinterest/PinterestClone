@@ -5,7 +5,7 @@ import {updateBoards} from '../actions/userActions';
 import './ModalComponent.css'
 
 class CreateBoard extends Component {
-  
+
 
   createBoard = (values) => {
     const boards = this.props.user.data.boards

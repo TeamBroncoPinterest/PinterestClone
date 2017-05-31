@@ -277,11 +277,11 @@
   background-color: #fff;
   border: none;
   align-items: center;
-   border-radius: 0 0 6px;
+  border-radius: 0 0 6px;
   display: flex;
-    -webkit-box-flex: 0;
-     flex: 0 1 64px;
-    min-height: 60px;
+  -webkit-box-flex: 0;
+  flex: 0 1 64px;
+  min-height: 60px;
   width: 100%
 }
 
@@ -331,7 +331,6 @@
 }
 
 .Pin2Board_CreateBoardNameDiv {
-  border-bottom: 1px solid #efefef;
   flex: 0 0 auto;
   padding: 10px;
   padding-right: 0px;
@@ -346,6 +345,25 @@
   color: #a5a5a5;
 
 }
+
+.Pin2Board_CreateBoardDescriptionDiv {
+  border-bottom: 1px solid #efefef;
+  flex: 0 0 auto;
+  padding: 10px;
+  padding-right: 0px;
+  height: 72.11;
+  margin-top: -10px;
+}
+
+.Pin2Board_CreateBoardDescriptionHeader {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 1px;
+  margin: 0;
+  color: #a5a5a5;
+
+}
+
 .Pin2Board_CreateBoardInput {
   border: 0;
   box-shadow: none;
@@ -360,15 +378,17 @@
 
 .Pin2Board_CreateBoardEmptyDiv {
   flex: 1 0 auto;
-  height: 317.77px;
+  height: 292px;
   width: 100%;
+
 }
 
 .Pin2Board_CreateBoardButtonDiv {
   border-top: 1px solid #efefef;
   flex: 0 0 38px;
   padding: 25px;
-  height: 89px;
+  padding-top: 12px;
+  height: 62px;
 }
 
 .Pin2Board_CreateBoardCancelButton {

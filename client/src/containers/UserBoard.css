@@ -8,7 +8,7 @@
 .board-wrapper {
   padding -top: 60px;
   display:  block;
-  width: 100%;
+  width: 100vw;
   height: 100%;
   font-family: 'Open Sans', sans-serif;
 }
@@ -16,7 +16,8 @@
 .board-mainContainer {
   display: block;
   width: 744px;
-  min-height: 816px;
+  height:150px;
+  max-width: 744px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -94,7 +95,7 @@
 }
 
 .board-title {
-  font-size: 36px;
+  font-size: 44px;
   font-weight: bold;
   color: #555;
   letter-spacing: -1.25px;
@@ -152,4 +153,56 @@
     margin: 0 auto;
     position: relative;
     display: block;
+}
+
+.feedWrapper {
+    width: 87.5%;
+    height: auto;
+    margin: auto;
+}
+.feed {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15px;
+  height: auto;
+  display: block;
+  column-gap: 4px;
+  column-width: 256px;
+}
+
+
+@media (min-width: 260px) {
+  .feedWrapper {
+    width: 260px;
+  }
+}
+
+@media (min-width: 520px) {
+  .feedWrapper {
+    width: 520px;
+  }
+}
+
+@media (min-width: 780px) {
+  .feedWrapper {
+    width: 780px;
+  }
+}
+
+@media (min-width: 1040px) {
+  .feedWrapper {
+    width: 1040px;
+  }
+}
+
+@media (min-width: 1300px) {
+  .feedWrapper {
+    width: 1300px;
+  }
+}
+
+@media (min-width: 1560px) {
+  .feedWrapper {
+    width: 1560px;
+  }
 }

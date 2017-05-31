@@ -5,11 +5,9 @@ import './Pin2Board.css';
 class BoardDiv extends Component {
     render() {
         const data = this.props.data;
-        console.log("data", data);
-console.log("data name", data.name); 
         return (
-          
-            <div className="Pin2Board_BoardDiv">
+
+            <div className="Pin2Board_BoardDiv" onClick={() => this.props.savePin(data.name)}>
                 <div className="Pin2Board_BoardImgBox">
                     <img  className="Pin2Board_BoardImg" alt="" src={data.img} />
                 </div>

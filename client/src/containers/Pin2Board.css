@@ -78,7 +78,7 @@
     line-height: 16px;
     margin: 5px 0 6px;
     margin-top:10px;
-    overflow: hidden;
+    overflow: auto;
     resize: none;
     width: 216px;
     word-spacing: 0;

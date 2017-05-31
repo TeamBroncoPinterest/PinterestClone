@@ -37,7 +37,7 @@ class App extends Component {
     return (
       <Router>
         <div>
-          { showNav && <Nav />}
+          { showNav && <Nav /> }
             <Route path='/login' component={Login} />
           <div className='belowNav'>
             <Route path='/' exact={true} component={Feed} />

@@ -35,7 +35,6 @@ export function validateLogin(values) {
 }
 
 export function updateBoards(data) {
-  console.log(data)
   return (dispatch) => {
     axios.put(`/api/update_board/${data.user_id}`, data)
       .then(() => {
@@ -49,7 +48,6 @@ export function updateBoards(data) {
 
 
 export function createPin(user, pinData) {
-  console.log( { ...pinData, user_id: user.user_id });
   return (dispatch) => {
     axios.post('api/create_pin', { ...pinData, user_id: user.user_id })
       .then(() => {

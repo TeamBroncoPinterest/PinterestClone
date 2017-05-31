@@ -12,13 +12,9 @@ class Feed extends Component {
   //   if(this.props.feed.feed.data) {
   //     axios.post('/api/pins', this.props.feed.feed.data)
   //       .then(() => {
-  //         console.log('good');
   //         if(this.props.feed.feed.hasNext) {
   //           this.props.feed.feed.next();
   //         }
-  //       })
-  //       .catch(() => {
-  //         console.log('error');
   //       })
   //   }
   // }

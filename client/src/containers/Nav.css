@@ -67,6 +67,13 @@ svg,path {
   width: 100%;
 
 }
+.nav-x {
+  color: #aaa;
+  font-size: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-right: 15px;
+}
 
 .nav-nav-item {
   text-decoration: none;

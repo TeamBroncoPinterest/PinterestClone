@@ -6,8 +6,6 @@ import './SingleBoard.css';
 class SingleBoard extends Component {
     render() {
         const data = this.props.data;
-        console.log("data", data);
-console.log("data name", data.name); 
         return (
           <div className="single-board-shell-container">
             <div className="single-board-shell">

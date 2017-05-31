@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
-import Profile from './Profile'
+// import Profile from './Profile'
 import './UpdateBoard.css';
 
 class UpdateBoard extends Component {
 
   render() {
-    return ( 
-    < div > 
+    return (
+    < div >
     <div className="UpdateBoard_wrapper">
       <div className="UpdateBoard_Box">
 

@@ -32,7 +32,6 @@ class SelectedPin extends Component {
 
   render() {
     const data = this.props.data;
-    console.log(data);
     return (
       <div className='selected-pin-body'>
       { this.state.savePin && <Pin2BoardModal savePinExit ={ () => this.savePinExit() } /> }

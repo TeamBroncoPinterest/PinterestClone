@@ -48,12 +48,12 @@ export function updateBoards(data) {
 }
 
 
-export function createPin(user, description, pinData, boardName) {
-
+export function createPin(user, pinData) {
+  console.log( { ...pinData, user_id: user.user_id });
   return (dispatch) => {
-    axios.post('api/create_pin', { ...pinData, user_id: user.user_id, note: description, board: boardName })
+    axios.post('api/create_pin', { ...pinData, user_id: user.user_id })
       .then(() => {
-        user.pins.push({ ...pinData, user_id: user.user_id, note: description, board: boardName })
+        user.pins.push({ ...pinData, user_id: user.user_id })
         return dispatch({
           type: CREATE_PIN,
           payload: user
@@ -69,6 +69,11 @@ export function editPin(board, note, user, pinId) {
 
   return (dispatch) => {
     axios.put('api/edit_pin', { board, note, id: pinId })
+      .then((response) => {
+        return dispatch({
+          type: EDIT_PIN
+        })
+      })
   }
   return {
     type: EDIT_PIN
@@ -77,7 +82,12 @@ export function editPin(board, note, user, pinId) {
 
 export function deletePin(pinID) {
 
-  return {
-    type: DELETE_PIN
+  return (dispatch) => {
+    axios.delete('api/delete_pin', { id: pinID})
+      .then((response) => {
+        return dispatch({
+          type: DELETE_PIN
+        })
+      })
   }
 }

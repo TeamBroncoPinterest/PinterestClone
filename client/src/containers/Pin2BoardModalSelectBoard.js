@@ -12,7 +12,7 @@ class Pin2BoardSelectBoard extends Component {
         let boards = <div></div>
         if (this.props.userBoards.data.boards) {
             boards = this.props.userBoards.data.boards.map((val, ind) => {
-                    return <BoardDiv data={val} key={val.name} editBoard={() => this.editBoard()}/>
+                    return <BoardDiv data={val} savePin={(boardName) => this.props.savePin(boardName)} key={val.name} editBoard={() => this.editBoard()}/>
                 })
         }
         return (

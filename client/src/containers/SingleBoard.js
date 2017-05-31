@@ -1,11 +1,13 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
-
+import { connect } from 'react-redux';
 import './SingleBoard.css';
 
 class SingleBoard extends Component {
     render() {
-
+        const data = this.props.data;
+        console.log("data", data);
+console.log("data name", data.name); 
         return (
           <div className="single-board-shell-container">
             <div className="single-board-shell">
@@ -14,12 +16,12 @@ class SingleBoard extends Component {
                         <Link to="/board"><div className="single-board-pics-container">
                             <img
                               alt=""
-                              src="https://s-media-cache-ak0.pinimg.com/564x/8b/f9/e9/8bf9e9b5cc776852497cd22604afcf5b.jpg"
+                              src={data.img}
                               className="single-board-pic"
                             />
                         </div></Link>
                         <div className="single-board-description-edit-container">
-                            <p className="single-board-title">Board Name</p>
+                            <p className="single-board-title">{data.name}</p>
                             <button className="single-board-edit" onClick={() => this.props.editBoard()}>Edit</button>
                         </div>
                     </div>
@@ -30,4 +32,8 @@ class SingleBoard extends Component {
     }
 }
 
-export default SingleBoard;
+function mapStateToProps(store) {
+    return {user: store.user}
+}
+
+export default connect(mapStateToProps)(SingleBoard);

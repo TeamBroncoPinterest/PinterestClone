@@ -65,6 +65,7 @@
   color: #5e5e5e;
   float: left;
   width: 140px;
+  margin-top: 15px;
 }
 
 .UpdateBoard_Input {
@@ -137,17 +138,10 @@
 }
 
 @media (max-width: 600px) {
-<<<<<<< HEAD
   .UpdateBoard_Box {
     width: auto;
     max-width: 600px;
     height: 250px;
   }
 }
-=======
-.UpdateBoard_Box {
-  width: auto;
-  max-width:600px;
-  height:250px;
-}}
->>>>>>> master
+

@@ -5,13 +5,14 @@ import {updateBoards} from '../actions/userActions';
 import './ModalComponent.css'
 
 class CreateBoard extends Component {
+  
 
   createBoard = (values) => {
-    const boards = this.props.user.data.data.boards
+    const boards = this.props.user.data.boards
     boards.push({name: values.boardname, description: values.boarddescription})
     this
       .props
-      .updateBoards(this.props.user.data.data);
+      .updateBoards(this.props.user.data);
     this
       .props
       .closeWindow();

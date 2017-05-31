@@ -62,6 +62,7 @@
 }
 
 .UpdateBoard_Name {
+  margin-top: 15px;
   color: #5e5e5e;
   float: left;
   width: 140px;
@@ -95,15 +96,22 @@
   font-family: 'Open Sans', sans-serif;
 }
 
-.Buttons_Component {
+.Buttons_Component1 {
+  height: 37 px;
+  font-family: 'Open Sans', sans-serif;
+  float: left;
+}
+
+.Buttons_Component2 {
   height: 37 px;
   font-family: 'Open Sans', sans-serif;
   float: right;
 }
 
-.create_button {
+.save_button {
   color: #fff;
   font-size: 16px;
+  font-weight:bold;
   background-color: #bd081c;
   border: none;
   border-radius: 4px;
@@ -112,11 +120,14 @@
   position: relative;
   text-shadow: nonet;
   cursor: pointer;
+  float: right;
+  margin-left: 5px;
 }
 
 .cancel_button {
   color: #5e5e5e;
   font-size: 16px;
+  font-weight:bold;
   background-color: #efefef;
   border: none;
   border-radius: 4px;
@@ -126,13 +137,35 @@
   text-shadow: nonet;
   margin-right: 5px;
   cursor: pointer;
+  float: right;
+
 }
 
-.CreateBoard_cancel_button:hover {
+.delete_button {
+  color: #5e5e5e;
+  font-size: 16px;
+  font-weight:bold;
+  background-color: #efefef;
+  border: none;
+  border-radius: 4px;
+  box-shadow: none;
+  padding: 10px 14px;
+  position: relative;
+  text-shadow: nonet;
+  margin-right: 5px;
+  cursor: pointer;
+  float: left;
+}
+
+.cancel_button:hover {
   background-color: #dbdbdb;
 }
 
-.CreateBoard_create_button:hover {
+.delete_button:hover {
+  background-color: #dbdbdb;
+}
+
+.save_button:hover {
   background-color: #a30718;
 }
 

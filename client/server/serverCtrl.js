@@ -29,9 +29,7 @@ module.exports = {
         const username = req.body.username;
         const password = req.body.password;
         db.validate_user_login([username, password], function (err, response) {
-          console.log(response[0], response);
             if (!err && response[0]) {
-              console.log('logging');
                 const id = response[0].id;
                 db.get_user([id], function (err, user) {
                     if (err) {
@@ -65,7 +63,6 @@ module.exports = {
                 db.create_user_login([username, password], function (err) {
                     if (!err) {
                         db.get_id([username], function (err, response) {
-                            console.log(response)
                             if (!err) {
                                 const id = response[0].id
                                 db.create_user([id, first, last], function (err) {
@@ -127,23 +124,23 @@ module.exports = {
             if (err) {
                 console.log(err);
             } else {
-                console.log(response)
                 res.status(200).send(response);
             }
         })
     },
 
     deleteuser: function (req, res) {
-        console.log(req.params, req.body);
         db.delete_user([req.params.id], function (err, response) {
             if (err) {
                 console.log(err);
+                res.status(500).send()
             } else {
                 db.delete_user_login([req.params.id], function (err, response) {
                     if (err) {
                         console.log(err);
+                        res.status(500).send()
                     } else {
-                        res.send(response);
+                        res.status(200).send(response);
                     }
                 })
             }
@@ -154,10 +151,10 @@ module.exports = {
     updateboard: function (req, res) {
         let user_id = req.params.id;
         let boards = JSON.stringify(req.body.boards);
-        console.log(user_id, boards);
         db.update_board([user_id, boards], function (err, response) {
             if (err) {
                 console.log(err);
+                res.status(500).send()
             } else {
                 res.status(200).send(response);
             }
@@ -169,7 +166,6 @@ module.exports = {
       const { user_id, creator, image, original_link, note, board, metadata } = req.body;
       db.create_pin([ user_id, creator, image, original_link, note, board, metadata], function (err, response) {
         if (!err) {
-          console.log(response);
           res.status(200).send()
         } else {
           console.log(err);
@@ -197,7 +193,21 @@ module.exports = {
           res.status(200).send();
         } else {
           console.log(err);
-          res.status(500).send()
+          res.status(500).send();
+        }
+      })
+    },
+
+    deleteBoardPin: function (req, res) {
+      const { user_id } = req.params;
+      let board_name = req.params.board_name;
+      board_name = board_name.toLowerCase();
+      db.delete_board_pin([Number(user_id), board_name], function (err, response) {
+        if (!err) {
+          res.status(200).send()
+        } else {
+          console.log(err);
+          res.status(500).send();
         }
       })
     },

@@ -58,9 +58,6 @@ export function createPin(user, pinData) {
         })
       })
   }
-
-
-
 }
 
 export function editPin(board, note, user, pinId) {

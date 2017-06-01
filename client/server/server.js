@@ -41,6 +41,8 @@ app.get('/api/feed/:term', ctrl.searchFeed)
 app.post('/api/create_pin', ctrl.createPin);
 app.put('/api/edit_pin', ctrl.editPin);
 app.delete('/api/delete_pin', ctrl.deletePin);
+app.delete('/api/delete_board_pin/:user_id/:board_name', ctrl.deleteBoardPin);
+
 
 // app.post('/api/pins', ctrl.storePins)
 

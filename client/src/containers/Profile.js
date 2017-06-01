@@ -40,6 +40,7 @@ class Profile extends Component {
   }
 
   render() {
+
     if (!this.props.user.loggedIn) {
       return (< Redirect to = "/login" />)
     }
@@ -96,7 +97,7 @@ class Profile extends Component {
       </div>
       <div className="profile-boards-pins">
         {this.state.create && <CreateBoard closeWindow={() => this.closeWindow()}/>}
-        {this.state.edit && <UpdateBoard closeEditWindow={() => this.closeEditWindow()}/>}
+        {this.state.edit && <UpdateBoard data={''} closeEditWindow={() => this.closeEditWindow()}/>}
         <AddBoard createBoard={() => this.createBoard()}/>
         {boards}
       </div>

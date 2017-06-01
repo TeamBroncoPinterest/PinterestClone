@@ -15,9 +15,9 @@ class SingleBoard extends Component {
         return (
           <div className="single-board-shell-container">
             <div className="single-board-shell">
-                <div className="single-board-outer-container">
+                <div className="single-board-outer-container" onClick={() => this.selectBoard()}>
                     <div className="single-board-inner-container">
-                        <Link to="/board" onClick={() => this.selectBoard()}><div className="single-board-pics-container">
+                        <Link to="/board" ><div className="single-board-pics-container">
                             <img
                               alt=""
                               src={pins}

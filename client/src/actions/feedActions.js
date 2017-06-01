@@ -42,8 +42,6 @@ export function searchFeed(term) {
 }
 
 export function clearSearch() {
-
-
   return {
     type: CLEAR_SEARCH
   }

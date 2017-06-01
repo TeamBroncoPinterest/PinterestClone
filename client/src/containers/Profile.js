@@ -63,7 +63,6 @@ class Profile extends Component {
         return <SingleBoard data={val} key={val.name} editBoard={() => this.editBoard()}/>
     })
   }
-
   return (
     <div className="profile-container">
       <div className="profile-nav">

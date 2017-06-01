@@ -77,6 +77,10 @@ p {
 
 }
 
+.link {
+  text-decoration: none;
+}
+
 .single-board-pin-count{
   font-size: 12px;
   font-family: 'Open Sans', sans-serif;

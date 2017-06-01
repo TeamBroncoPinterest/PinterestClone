@@ -11,6 +11,7 @@ class SingleBoard extends Component {
     render() {
         const data = this.props.data;
         const pins = data.pins[0] ? data.pins[0].image.original.url : '';
+        const length = data.pins ? data.pins.length : 0;
 
         return (
           <div className="single-board-shell-container">
@@ -26,8 +27,8 @@ class SingleBoard extends Component {
                         </div></Link>
                         <div className="single-board-description-edit-container">
                           <div>
-                            <p className="single-board-title">{data.name}</p>
-                            <p className="single-board-pin-count">5 Pins</p>
+                            <Link to="/board" className="link" ><p className="single-board-title">{data.name}</p></Link>
+                            <p className="single-board-pin-count">{ length } Pins</p>
                           </div>
                             <button className="single-board-edit" onClick={() => this.props.editBoard()}>Edit</button>
                         </div>

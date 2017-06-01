@@ -56,16 +56,16 @@ class SinglePin extends Component {
     }
     return (
       <div className="single-pin-shell">
-        <div className="single-pin-outer-container">
+      { (this.state.selected && <SelectedPin exitPin={() => this.exitPin()} />) || (this.state.savePin && <Pin2BoardModal savePinExit ={ () => this.savePinExit() } />) }
+        <div className="single-pin-outer-container" onClick={() => this.selectPin()}>
           <div className="single-pin-inner-container">
             <div className="single-pin-pic-container">
-            { (this.state.selected && <SelectedPin exitPin={() => this.exitPin()} />) || (this.state.savePin && <Pin2BoardModal savePinExit ={ () => this.savePinExit() } />) }
               <img className="single-pin-pic" src={data.image.original.url} alt="" />
               <button onClick={() => this.savePin()} className="single-pin-save"><img className="single-pin-save-pin" src={pin} alt="pin"/>Save</button>
               <div className="dimGradient">
                 <a><p><span>{url}</span></p></a>
               </div>
-              <a className="dimOverlay" onClick={() => this.selectPin()}><div></div></a>
+              <a className="dimOverlay" ><div></div></a>
             </div>
             <div className="single-pin-description-container">
               <p className="single-pin-title">

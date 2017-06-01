@@ -18,7 +18,7 @@
   position: fixed;
   display: flex;
   align-items: center;
-  
+
 }
 .profile-nut {
   height: 26px;
@@ -44,9 +44,14 @@
 .profile-name {
   padding-left: 16px;
 }
+
+.profile-nameBold {
+  font-weight: bold;
+}
+
 .profile-name h3 {
   color: #555;
-  font-size: 36px;
+  font-size: 40px;
   line-height: 42px;
   margin: 0px;
   letter-spacing: -1.25px;

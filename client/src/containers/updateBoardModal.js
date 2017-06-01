@@ -3,63 +3,99 @@ import {connect} from 'react-redux';
 import {reduxForm, Field} from 'redux-form';
 import './UpdateBoard.css';
 
+import { deletePinsByBoard } from '../actions/feedActions';
+import { updateBoards } from '../actions/userActions';
+
 class UpdateBoard extends Component {
+
+  editBoard = () => {
+
+  }
+
+  deleteBoard = () => {
+    const boardName = this.props.selectedBoard.name;
+    const user = this.props.user;
+    this.props.user.boards = this.props.user.boards.filter( v => {
+      return v.name !== boardName;
+    })
+    console.log(user);
+    this.props.user.pins = this.props.user.pins.filter( v => {
+      return v.board.name !== boardName;
+    })
+    this.props.updateBoards(this.props.user);
+    this.props.deletePinsByBoard(user, boardName);
+    this.props.closeEditWindow();
+  }
+
 
   render() {
     const data = this.props.selectedBoard;
-    console.log(data);
     return (
-  <div>
-    <div className="UpdateBoard_wrapper">
-      <div className="UpdateBoard_Box">
+      <div>
+        <div className="UpdateBoard_wrapper">
+          <div className="UpdateBoard_Box">
 
-        <div className="UpdateBoard_TopBox">
-          <p className="UpdateBoard_title">
-            <b>Edit your board  </b>
-             {data.name}</p>
-          <div className="UpdateBoard_X" onClick={() => this.props.closeEditWindow()}></div>
+            <div className="UpdateBoard_TopBox">
+              <p className="UpdateBoard_title">
+                <b>Edit your board </b>
+                 {data.name}</p>
+              <div className="UpdateBoard_X" onClick={() => this.props.closeEditWindow()}></div>
+            </div>
+
+
+                    <div className="UpdateBoard_CreateBoard">
+                      <h5 className="UpdateBoard_Name">Name</h5>
+                      <Field
+                        type="text"
+                        className="UpdateBoard_Input"
+                        placeholder={data.name}
+                        component="input"
+                        name="name"
+                      />
+                    </div>
+
+                  <div className="UpdateBoard_CreateBoard">
+                    <h5 className="UpdateBoard_Name">Description</h5>
+                    <Field
+                      type="text"
+                      placeholder={data.description}
+                      className="UpdateBoard_Input"
+                      component="textarea"
+                      name="description"
+                    />
+                  </div>
+
+                  <div className="UpdateBoard_ButtonBox">
+                    <div className="Buttons_Component1">
+                      <button className="delete_button" onClick={() => this.deleteBoard()}>
+                        <b>Delete board</b>
+                      </button>
+                    </div>
+                    <div className="Buttons_Component2">
+                      <button className="save_button" onClick={() => this.editBoard()}>
+                        <b>Save</b>
+                      </button>
+                      <button className="cancel_button" onClick={() => this.props.closeEditWindow()}>
+                        <b>Cancel</b>
+                      </button>
+                    </div>
+                  </div>
+
+          </div>
         </div>
-
-        
-                <div className="UpdateBoard_CreateBoard">
-                  <h5 className="UpdateBoard_Name">Name</h5>
-                  <input
-                    type='text'
-                    className="UpdateBoard_Input"
-                    placeholder= {data.name}
-                    value=" "/>
-                </div>
-
-              <div className="UpdateBoard_CreateBoard">
-                <h5 className="UpdateBoard_Name">Description</h5>
-                <textarea type='text' value="" className="UpdateBoard_Input">Previous board description here</textarea>
-              </div>
-
-              <div className="UpdateBoard_ButtonBox">
-                <div className="Buttons_Component1">
-                  <button className="delete_button">
-                    <b>Delete board</b>
-                  </button>
-                </div>
-                <div className="Buttons_Component2">
-                  <button className="save_button">
-                    <b>Save</b>
-                  </button>
-                  <button className="cancel_button" onClick={() => this.props.closeEditWindow()}>
-                    <b>Cancel</b>
-                  </button>
-                </div>
-              </div>
-
       </div>
-    </div>
-  </div>
-  )
-}
+    )
+  }
 }
 
 function mapStateToProps(store) {
-return {selectedBoard: store.user.selectedBoard}
+  return {
+    user: store.user.data,
+    selectedBoard: store.user.selectedBoard,
+    initialValues: store.user.selectedBoard,
+    boardForm: store.form
+  }
 }
+UpdateBoard = reduxForm({form: 'boardForm'})(UpdateBoard);
 
-export default connect(mapStateToProps)(UpdateBoard);
+export default connect(mapStateToProps, { updateBoards, deletePinsByBoard })(UpdateBoard);

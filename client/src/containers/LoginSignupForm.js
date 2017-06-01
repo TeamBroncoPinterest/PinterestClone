@@ -115,11 +115,11 @@ class LoginSignupForm extends Component {
 }
 
 function mapStateToProps(store) {
-    return {
-        loginForm: store.form,
-        user: store.user
+  return {
+    loginForm: store.form,
+    user: store.user
+  }
 }
-}
-LoginSignupForm = reduxForm({form: "loginForm"})(LoginSignupForm)
+LoginSignupForm = reduxForm({form: 'loginForm'})(LoginSignupForm)
 
 export default connect(mapStateToProps, { createUser, validateLogin })(LoginSignupForm);

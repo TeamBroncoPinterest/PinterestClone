@@ -10,7 +10,7 @@ import UpdateBoard from './updateBoardModal';
 import './Profile.css';
 import nut from '../pics/nut.png';
 import dotdotdot from '../pics/dotdotdot.png';
-import blankProfile from '../pics/blank-profile.png';
+import blankProfile from '../pics/bananaLady.jpg';
 import AddBoard from './AddBoard';
 
 class Profile extends Component {
@@ -63,7 +63,6 @@ class Profile extends Component {
         return <SingleBoard data={val} key={val.name} editBoard={() => this.editBoard()}/>
     })
   }
-
   return (
     <div className="profile-container">
       <div className="profile-nav">
@@ -79,7 +78,7 @@ class Profile extends Component {
       <div className="profile-profile-info">
         <div className="profile-side-margin profile-info-margin">
           <div className="profile-name">
-            <h3>{data.first}</h3>
+            <h3 className="profile-nameBold">{data.first}</h3>
           </div>
           <div className="profile-profile-info-right">
             <div className="profile-info-bio">{data.bio}</div>

@@ -62,8 +62,10 @@ class SinglePin extends Component {
             <div className="single-pin-pic-container">
               <img className="single-pin-pic" src={data.image.original.url} alt="" />
               <button onClick={() => this.savePin()} className="single-pin-save"><img className="single-pin-save-pin" src={pin} alt="pin"/>Save</button>
-              <div className="dimGradient">
+
+              <div className="dimGradient" onClick={() => this.selectPin()}>
                 <a><p><span>{url}</span></p></a>
+
               </div>
               <a className="dimOverlay" ><div></div></a>
             </div>

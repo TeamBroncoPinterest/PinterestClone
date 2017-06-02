@@ -212,9 +212,7 @@
 }
 
 .Pin2Board_BoardImg {
-    height: 100%;
-    margin-left: -5px;
-    max-width: inherit;
+    width: 100%;
 }
 
 .Pin2Board_BoardTitle {

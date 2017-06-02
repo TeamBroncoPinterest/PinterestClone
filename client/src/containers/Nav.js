@@ -34,7 +34,7 @@ class Nav extends Component {
 
           </div>
           <div className="nav-search-container">
-            <img className="nav-magnifying-glass" src={magnifyingGlass} alt="" />
+            <img className="nav-magnifying-glass" src={magnifyingGlass} alt="" onClick={() => this.searchTerm()} />
             <form className="nav-form" onSubmit={() => this.searchTerm()}>
               <input className="nav-search-bar" value={this.state.term} onChange={(e) => this.setState({ term: e.target.value })} placeholder="Search" />
             </form>

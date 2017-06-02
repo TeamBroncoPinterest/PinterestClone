@@ -43,13 +43,16 @@
 .ModalBoard_X {
   height: 12px;
   width: 12px;
-  background: url(https://s.pinimg.com/webapp/style/images/webapp-common-main-1x-c20ceaff.png) -261px -242px no-repeat;
+  background: url(../pics/close-icon.png);
+  background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
   float: right;
   cursor: pointer;
   margin: -6px;
   position: absolute;
   right: 26px;
-  top: 33px;
+  top: 25px;
 }
 
 .CreateBoard_CreateBroard {
@@ -103,12 +106,16 @@
   color: #fff;
   font-size: 16px;
   background-color: #bd081c;
+  font-weight: bold;
   border: none;
   border-radius: 4px;
   box-shadow: none;
   padding: 10px 14px;
   position: relative;
   text-shadow: none;
+  float: right;
+  margin-right: 20px;
+  margin-left: 10px;
 }
 
 .cancel_button {
@@ -121,7 +128,8 @@
   padding: 10px 14px;
   position: relative;
   text-shadow: none;
-  margin-right: 5px;
+
+  float: right;
 }
 
 .cancel_button:hover {

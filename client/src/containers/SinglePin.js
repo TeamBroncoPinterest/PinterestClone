@@ -57,7 +57,8 @@ class SinglePin extends Component {
     }
     return (
       <div className="single-pin-shell">
-      { (this.state.selected && <SelectedPin exitPin={() => this.exitPin()} />) || (this.state.savePin && <Pin2BoardModal savePinExit ={ () => this.savePinExit() } />) }
+      {(this.state.selected && <SelectedPin exitPin ={ () => this.exitPin() } />)}
+        {(this.state.savePin && <Pin2BoardModal savePinExit ={ () => this.savePinExit() } />)}
         <div className="single-pin-outer-container" onClick={() => this.selectPin()}>
           <div className="single-pin-inner-container">
             <div className="single-pin-pic-container">

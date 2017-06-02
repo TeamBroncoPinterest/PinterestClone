@@ -19,7 +19,7 @@
   position: fixed;
   display: inline-block;
   align-items: center;
-
+  z-index: 9;
 }
 .profile-nut {
   height: 26px;

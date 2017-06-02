@@ -179,6 +179,10 @@
   outline: none;
 }
 
+.selected-pin-control-button-img-dots {
+  width: 20px;
+}
+
 @media (max-width: 650px) {
   .selected-pin-container {
     width: 95%;
@@ -191,6 +195,9 @@
     position: sticky;
     top: 0;
   }
+  .selected-pin-control-button-img-dots {
+    width: 25px;
+  }
 }
 @media (max-width: 799px) {
   .selected-pin-control-button-close {
@@ -198,5 +205,8 @@
   }
   .selected-pin-control-button-close-mobile {
     display: block;
+  }
+  .selected-pin-control-button-img-dots {
+    width: 30px;
   }
 }

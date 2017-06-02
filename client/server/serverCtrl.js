@@ -10,6 +10,7 @@ module.exports = {
                 res.status(200).send(response);
             } else {
                 console.log(err);
+                res.status(500).send();
             }
         })
     },
@@ -20,6 +21,7 @@ module.exports = {
                 res.status(200).send(response);
             } else {
                 console.log(err);
+                res.status(500).send();
             }
         })
     },
@@ -34,6 +36,7 @@ module.exports = {
                 db.get_user([id], function (err, user) {
                     if (err) {
                         console.log(err)
+                        res.status(500).send();
                     } else {
                         db.get_pin([id], function (err, pins) {
                             if (!err) {
@@ -41,6 +44,7 @@ module.exports = {
                               res.status(200).send(user[0]);
                             } else {
                               console.log(err);
+                              res.status(500).send();
                             }
                         })
                     }
@@ -68,15 +72,17 @@ module.exports = {
                                 db.create_user([id, first, last], function (err) {
                                     if (err) {
                                         console.log(err);
+                                        res.status(500).send();
                                     } else {
                                         db.get_user([id], function (err, user) {
                                             if (err) {
-                                                console.log(err)
                                                 console.log(err);
+                                                res.status(500).send();
                                             } else {
                                                 db.get_pin([id], function (err, pins) {
                                                     if (err) {
                                                         console.log(err);
+                                                        res.status(500).send();
                                                     } else {
                                                         user[0].pins = pins;
                                                         res.status(200).send(user[0]);
@@ -89,16 +95,19 @@ module.exports = {
                                 })
                             } else {
                                 console.log(err);
+                                res.status(500).send();
                             }
                         })
                     } else {
                         console.log(err);
+                        res.status(500).send();
                     }
                 })
 
 
             } else {
                 console.log(err);
+                res.status(500).send();
             }
         })
     },
@@ -113,6 +122,7 @@ module.exports = {
         db.update_user([user_id, first, last, bio, img], function (err, response) {
             if (err) {
                 console.log(err);
+                res.status(500).send();
             } else {
                 res.status(200).send(response);
             }
@@ -123,6 +133,7 @@ module.exports = {
         db.get_user([req.params.id], function (err, response) {
             if (err) {
                 console.log(err);
+                res.status(500).send();
             } else {
                 res.status(200).send(response);
             }
@@ -162,7 +173,6 @@ module.exports = {
     },
 
     createPin: function (req, res) {
-      console.log(req.body);
       const { user_id, creator, image, original_link, note, board, metadata } = req.body;
       db.create_pin([ user_id, creator, image, original_link, note, board, metadata], function (err, response) {
         if (!err) {

@@ -57,7 +57,7 @@ class SelectedPin extends Component {
               <p>{data.note}</p>
             </div>
             <div>
-              <button href={data.original_link} className='selected-pin-info-visit'>Visit</button>
+              <a className='selected-pin-link' href={data.original_link} target='_blank'><button className='selected-pin-info-visit'>Visit</button></a>
             </div>
           </div>
           <div className='selected-pin-user-info'>

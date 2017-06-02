@@ -24,7 +24,6 @@
 
 .board-barDiv {
   display: block;
-  margin: auto;
   max-width: 744px;
   position: relative;
 }
@@ -47,7 +46,9 @@
   box-sizing: border-box;
   height: 48px;
   padding: 10px 0;
-  position: relative
+  position: relative;
+  margin-left: 28%;
+
 }
 
 .board-icons1 {
@@ -55,8 +56,8 @@
   background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center center;
-  height: 32px;
-  width: 32px;
+  height: 28px;
+  width: 28px;
   padding: 0;
   border: 0;
   cursor: pointer;
@@ -69,8 +70,8 @@
   background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center center;
-  height: 32px;
-  width: 32px;
+  height: 28px;
+  width: 28px;
   padding: 0;
   border: 0;
   cursor: pointer;
@@ -84,8 +85,8 @@
   background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center center;
-  height: 32px;
-  width: 32px;
+  height: 28px;
+  width: 28px;
   padding: 0;
   border: 0;
   cursor: pointer;

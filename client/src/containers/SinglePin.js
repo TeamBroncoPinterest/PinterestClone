@@ -38,9 +38,15 @@ class SinglePin extends Component {
     this.setState({ savePin: false })
   }
 
+  toLink = (link) => {
+    console.log(link);
+    window.open(link);
+  }
+
 
   render() {
     const data = this.props.data
+    const link = data.original_link
     let title = '';
 
     let url = data.original_link;
@@ -66,7 +72,7 @@ class SinglePin extends Component {
 
 
               <div className="dimGradient" onClick={() => this.selectPin()}>
-                <a><p><span>{url}</span></p></a>
+                <a><p><span onClick={() => this.toLink(link) }>{url}</span></p></a>
 
               </div>
               <a className="dimOverlay" ><div></div></a>

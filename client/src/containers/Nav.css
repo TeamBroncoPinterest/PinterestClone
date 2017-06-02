@@ -9,7 +9,7 @@ svg,path {
   width: calc(100% - 32px);
   height: 48px;
   background: #FFFFFF;
-  border-bottom: #DDDDDD solid 1px;
+  border-bottom: #f3f3f3 solid 1px;
   display: flex;
   justify-content: space-between;
   align-items: center;

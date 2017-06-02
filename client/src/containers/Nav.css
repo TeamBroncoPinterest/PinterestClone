@@ -52,6 +52,7 @@ svg,path {
   width: 20px;
   height: 20px;
   padding: 0px 16px;
+  cursor: pointer;
 }
 .nav-form {
   width: 100%;

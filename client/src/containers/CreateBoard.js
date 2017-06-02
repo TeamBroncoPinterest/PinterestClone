@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {reduxForm, Field} from 'redux-form';
 import {connect} from 'react-redux';
 import {updateBoards} from '../actions/userActions';
-import './ModalComponent.css'
+import './CreateBoard.css'
 
 class CreateBoard extends Component {
 

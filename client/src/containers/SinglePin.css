@@ -5,6 +5,7 @@ p {
 .single-pin-shell {
   margin: 0px 2px 30px 2px;
   width: 236px;
+  position: relative;
 }
 .single-pin-outer-container {
   background: #FFFFFF;
@@ -37,8 +38,8 @@ p {
   cursor: pointer;
   z-index: 2;
 }
-.single-pin-outer-container:hover .single-pin-save,
-.single-pin-outer-container:hover a{
+.single-pin-shell:hover .single-pin-save,
+.single-pin-shell:hover a{
   display: flex;
 }
 
@@ -86,8 +87,8 @@ p {
 
 .single-pin-save {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 20px;
+  right: 0px;
   display: none;
   color: #efefef;
   background: #BD081C;

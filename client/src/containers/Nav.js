@@ -16,7 +16,7 @@ class Nav extends Component {
     this.state = { term: '' }
   }
 
-  search = () => {
+  searchTerm = () => {
     this.props.searchFeed(this.state.term);
   }
 
@@ -35,7 +35,7 @@ class Nav extends Component {
           </div>
           <div className="nav-search-container">
             <img className="nav-magnifying-glass" src={magnifyingGlass} alt="" />
-            <form className="nav-form" onSubmit={() => this.search()}>
+            <form className="nav-form" onSubmit={() => this.searchTerm()}>
               <input className="nav-search-bar" value={this.state.term} onChange={(e) => this.setState({ term: e.target.value })} placeholder="Search" />
             </form>
             { this.state.term && <div className="nav-x" onClick={()=> this.clearSearch()}>x</div>}

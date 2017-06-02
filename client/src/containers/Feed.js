@@ -35,7 +35,7 @@ class Feed extends Component {
 
     return (
       <div className='feedWrapper'>
-        <div className="feed">{pins}</div>
+        <div className="feed feed-fade">{pins}</div>
       </div>
     )
   }

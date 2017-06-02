@@ -40,7 +40,9 @@ class SinglePin extends Component {
 
 
   render() {
+
     const data = this.props.data
+    console.log(data);
     let title = '';
 
     let url = data.original_link;

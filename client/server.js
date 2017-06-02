@@ -11,7 +11,7 @@ var app = module.exports = express();
 
 app.use(bodyParser.json());
 app.use(cors());
-app.use(express.static(path.join(__dirname, '/../public/')));
+app.use(express.static(path.join(__dirname, '/build')));
 
 var conn = massive.connectSync({
   connectionString : config.databasestring
@@ -47,7 +47,7 @@ app.delete('/api/delete_board_pin/:user_id/:board_name', ctrl.deleteBoardPin);
 // app.post('/api/pins', ctrl.storePins)
 
 
-var port = 3030;
+var port = 3000;
 app.listen(port, function() {
   console.log("Started server on port", port);
 });

@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-
+import { withRouter } from 'react-router';
+import PropTypes from 'prop-types'
 import { searchFeed, clearSearch } from '../actions/feedActions';
 
 import './Nav.css';
@@ -15,8 +16,14 @@ class Nav extends Component {
     super(props);
     this.state = { term: '' }
   }
+  static propTypes = {
+    history: PropTypes.object.isRequired,
+  }
 
   searchTerm = () => {
+    if(this.props.history.location.pathname !== "/") {
+      this.props.history.push('/');
+    }
     this.props.searchFeed(this.state.term);
   }
 
@@ -51,5 +58,5 @@ class Nav extends Component {
     )
   }
 }
-
+Nav = withRouter(Nav);
 export default connect(null, { searchFeed, clearSearch })(Nav);

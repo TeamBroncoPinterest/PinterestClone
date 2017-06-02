@@ -20,7 +20,8 @@ class Nav extends Component {
     history: PropTypes.object.isRequired,
   }
 
-  searchTerm = () => {
+  searchTerm = (e) => {
+    e.preventDefault();
     if(this.props.history.location.pathname !== "/") {
       this.props.history.push('/');
     }
@@ -42,7 +43,7 @@ class Nav extends Component {
           </div>
           <div className="nav-search-container">
             <img className="nav-magnifying-glass" src={magnifyingGlass} alt="" onClick={() => this.searchTerm()} />
-            <form className="nav-form" onSubmit={() => this.searchTerm()}>
+            <form className="nav-form" onSubmit={(e) => this.searchTerm(e)}>
               <input className="nav-search-bar" value={this.state.term} onChange={(e) => this.setState({ term: e.target.value })} placeholder="Search" />
             </form>
             { this.state.term && <div className="nav-x" onClick={()=> this.clearSearch()}>x</div>}

@@ -8,7 +8,7 @@
     bottom: 0;
     left: 0;
     right: 0;
-  z-index: 11;
+  z-index: 751;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -57,11 +57,12 @@
 .selected-pin-info {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+
   margin: auto;
   /*margin-bottom: 20px;*/
   width: 95%;
-  border-bottom: 1px solid grey;
+  border-bottom: 1px solid #dfdfdf;
+  margin-right: 20px;
 }
 .selected-pin-about {
   display: flex;
@@ -76,6 +77,7 @@
   width: 40px;
   border-radius: 50%;
   background: black;
+  margin-right: 15px;
 }
 .selected-pin-user-info {
   margin-left: 15px;
@@ -83,13 +85,14 @@
   align-items: center;
   width: 95%;
   margin-top: 10px;
-  border-bottom: 1px solid grey;
+  border-bottom: 1px solid #dfdfdf;
   padding: 5px;
 }
 .selected-pin-control {
   width: 25%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   float: left;
 }
 .selected-pin-control-button {
@@ -99,6 +102,17 @@
   color: grey;
   height: 30px;
   width: 30px;
+}
+
+
+.selected-pin-control-button-dots {
+  border: none;
+  background: white;
+  margin-top: 20px;
+  color: grey;
+  height: 30px;
+  width: 30px;
+  margin-bottom: -5px;
 }
 .selected-pin-control-button-close {
   background: none;
@@ -153,6 +167,9 @@
   border: none;
   border-radius: 3px;
   font-size: 1em;
+  font-weight: bold;
+  margin-right: 20px;
+  color: #5e5e5e;
 }
 .selected-pin-control-button:focus {
   outline: none;

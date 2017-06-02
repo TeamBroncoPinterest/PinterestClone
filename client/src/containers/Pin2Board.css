@@ -118,7 +118,7 @@
     padding: 10px;
     position: absolute;
     right: 18px;
-    top: 25px;
+    top: 20px;
     z-index: 1;
 }
 
@@ -209,12 +209,18 @@
     overflow: hidden;
     vertical-align: middle;
     width: 36px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
 }
 
 .Pin2Board_BoardImg {
     height: 100%;
-    margin-left: -5px;
-    max-width: inherit;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+
 }
 
 .Pin2Board_BoardTitle {
@@ -282,7 +288,8 @@
   -webkit-box-flex: 0;
   flex: 0 1 64px;
   min-height: 60px;
-  width: 100%
+  width: 100%;
+  margin-top: 5px;
 }
 
 
@@ -305,7 +312,7 @@
 .Pin2Board_CreateBoard {
   display: flex;
   font-weight: bold;
-  font-size: 17px;
+  font-size: 16px;
   align-items: center;
   color: #555;
 

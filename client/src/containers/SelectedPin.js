@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { selectPin } from '../actions/feedActions'
+import { selectPin } from '../actions/feedActions';
+
 
 import './SelectedPin.css';
 import blankProfilePic from '../pics/blank-profile.png';
 import pin from '../pics/pin.png';
 import close from '../pics/close-icon.png';
 import check from '../pics/check-icon.png';
-import dots from '../pics/dots-icon.svg';
-import share from '../pics/share-icon.svg'
+import dots from '../pics/dotdotdot.png';
+import share from '../pics/upload.JPG';
 import Pin2BoardModal from './Pin2BoardModal'
 
 
@@ -32,6 +33,7 @@ class SelectedPin extends Component {
 
   render() {
     const data = this.props.data;
+    console.log(data);
     return (
       <div className='selected-pin-body'>
       { this.state.savePin && <Pin2BoardModal savePinExit ={ () => this.savePinExit() } /> }
@@ -41,13 +43,13 @@ class SelectedPin extends Component {
             <div className='selected-pin-control'>
               <button className='selected-pin-control-button'><img src={share} alt='share' className='selected-pin-control-button-img' /></button>
               <button className='selected-pin-control-button'><img src={check} alt='check' className='selected-pin-control-button-img' /></button>
-              <button className='selected-pin-control-button'><img src={dots} alt='dots' className='selected-pin-control-button-img' /></button>
+              <button className='selected-pin-control-button'><img src={dots} alt='dots' className='selected-pin-control-button-img-dots' /></button>
             </div>
             <button onClick={() => this.savePin() } className='selected-pin-save'><img className='selected-pin-save-img' src={pin} alt='pin'/>Save</button>
           </div>
           <div className='selected-pin-view'>
             <button className='selected-pin-control-button-close-mobile' onClick={() => this.props.exitPin()}><img src={close} alt='close' /></button>
-            <img src={data.image.original.url} alt='img' className='selected-pin-img'/>
+            <img src={data.image.original.url}  alt='img' className='selected-pin-img' />
           </div>
           <div className='selected-pin-info'>
             <div className='selected-pin-about'>

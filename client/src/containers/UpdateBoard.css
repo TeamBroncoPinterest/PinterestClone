@@ -44,15 +44,20 @@
 }
 
 .UpdateBoard_X {
-  height: 12px;
-  width: 12px;
-  background: url(https://s.pinimg.com/webapp/style/images/webapp-common-main-1x-c20ceaff.png) -261px -242px no-repeat;
-  float: right;
-  cursor: pointer;
-  margin: -6px;
-  position: absolute;
-  right: 26px;
-  top: 33px;
+  height: 4px;
+  width: 4px;
+  background: url(https://image.ibb.co/cMtG0v/Xbutton.png);
+  background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+    border: 0;
+    cursor: pointer;
+    outline: 0;
+    padding: 10px;
+    position: absolute;
+    right: 18px;
+    top: 15px;
+    z-index: 1;
 }
 
 .UpdateBoard_CreateBroard {

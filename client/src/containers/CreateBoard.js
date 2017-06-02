@@ -51,11 +51,12 @@ class CreateBoard extends Component {
             <div className="ModalBoard_ButtonBox">
 
               <div className="Buttons_Component">
-                <button className="cancel_button" onClick={() => this.props.closeWindow()}>
-                  <b>Cancel</b>
-                </button>
+
                 <button className="create_button">
                   <b>Create</b>
+                </button>
+                <button className="cancel_button" onClick={() => this.props.closeWindow()}>
+                  <b>Cancel</b>
                 </button>
               </div>
             </div>

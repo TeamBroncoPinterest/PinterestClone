@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { selectPin } from '../actions/feedActions';
+import { Link } from 'react-router-dom';
 import $ from 'jquery';
 
 

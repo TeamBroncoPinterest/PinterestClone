@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { selectPin } from '../actions/feedActions';
 import { Link } from 'react-router-dom';
-import $ from 'jquery';
 
 
 import './SinglePin.css';
@@ -20,13 +19,10 @@ class SinglePin extends Component {
   selectPin = () => {
     this.setState({ selected: true })
     this.props.selectPin(this.props.data)
-      $('body').css('overflow', 'hidden');
-
   }
 
   exitPin = () => {
     this.setState({ selected: false })
-    $('body').css('overflow', 'scroll')
   }
 
   savePin = () => {
@@ -74,7 +70,7 @@ class SinglePin extends Component {
 
               <div className="dimGradient" onClick={() => this.selectPin()}>
 
-                
+
 
                 <a><p><span onClick={() => this.toLink(link) }>{url}</span></p></a>
 

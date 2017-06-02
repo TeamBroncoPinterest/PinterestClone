@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
 .selected-pin-body {
-  background: rgba(0,0,0,.75);
+  background: #EEEEEE;
   position: fixed;
   height: 100%;
-    top: 0;
+    top: 72px;
     bottom: 0;
     left: 0;
     right: 0;
@@ -19,9 +19,9 @@
   width: 630px;
   margin: auto;
   background: white;
-  border-radius: 5px;
+  border-radius: 8px;
   padding-bottom: 15px;
-  margin-bottom: 80px;
+  margin-bottom: 154px;
 }
 .selected-pin-header {
   display: block;
@@ -79,6 +79,9 @@
   background: black;
   margin-right: 15px;
 }
+.selected-pin-link {
+  text-decoration: none;
+}
 .selected-pin-user-info {
   margin-left: 15px;
   display: flex;
@@ -118,9 +121,10 @@
   background: none;
   border: none;
   position: fixed;
-    top: 40px;
+    top: 87px;
     right: 40px;
 }
+
 .selected-pin-control-button-close-mobile {
   background: none;
   border: none;

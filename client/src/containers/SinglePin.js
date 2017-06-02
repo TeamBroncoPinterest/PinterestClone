@@ -73,7 +73,11 @@ class SinglePin extends Component {
 
 
               <div className="dimGradient" onClick={() => this.selectPin()}>
+
+                
+
                 <a><p><span onClick={() => this.toLink(link) }>{url}</span></p></a>
+
 
               </div>
               <a className="dimOverlay" ><div></div></a>

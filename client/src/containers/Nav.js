@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-
+import { withRouter } from 'react-router';
+import PropTypes from 'prop-types'
 import { searchFeed, clearSearch } from '../actions/feedActions';
 
 import './Nav.css';
@@ -15,8 +16,15 @@ class Nav extends Component {
     super(props);
     this.state = { term: '' }
   }
+  static propTypes = {
+    history: PropTypes.object.isRequired,
+  }
 
-  searchTerm = () => {
+  searchTerm = (e) => {
+    e.preventDefault();
+    if(this.props.history.location.pathname !== "/") {
+      this.props.history.push('/');
+    }
     this.props.searchFeed(this.state.term);
   }
 
@@ -34,8 +42,8 @@ class Nav extends Component {
 
           </div>
           <div className="nav-search-container">
-            <img className="nav-magnifying-glass" src={magnifyingGlass} alt="" />
-            <form className="nav-form" onSubmit={() => this.searchTerm()}>
+            <img className="nav-magnifying-glass" src={magnifyingGlass} alt="" onClick={() => this.searchTerm()} />
+            <form className="nav-form" onSubmit={(e) => this.searchTerm(e)}>
               <input className="nav-search-bar" value={this.state.term} onChange={(e) => this.setState({ term: e.target.value })} placeholder="Search" />
             </form>
             { this.state.term && <div className="nav-x" onClick={()=> this.clearSearch()}>x</div>}
@@ -51,5 +59,5 @@ class Nav extends Component {
     )
   }
 }
-
+Nav = withRouter(Nav);
 export default connect(null, { searchFeed, clearSearch })(Nav);

@@ -30,9 +30,15 @@ class SelectedPin extends Component {
     this.setState({ savePin: false })
   }
 
+  toLink = (link) => {
+    console.log(link);
+    window.open(link);
+  }
+
 
   render() {
     const data = this.props.data;
+    const link = data.original_link;
     console.log(data);
     return (
       <div className='selected-pin-body'>
@@ -49,7 +55,7 @@ class SelectedPin extends Component {
           </div>
           <div className='selected-pin-view'>
             <button className='selected-pin-control-button-close-mobile' onClick={() => this.props.exitPin()}><img src={close} alt='close' /></button>
-            <img src={data.image.original.url}  alt='img' className='selected-pin-img' />
+            <img onClick={() => this.toLink(link) } src={data.image.original.url}   alt='img' className='selected-pin-img' />
           </div>
           <div className='selected-pin-info'>
             <div className='selected-pin-about'>
@@ -57,7 +63,11 @@ class SelectedPin extends Component {
               <p>{data.note}</p>
             </div>
             <div>
-              <a className='selected-pin-link' href={data.original_link} target='_blank'><button className='selected-pin-info-visit'>Visit</button></a>
+
+            
+
+              <button onClick={() => this.toLink(link) } className='selected-pin-info-visit'>Visit</button>
+
             </div>
           </div>
           <div className='selected-pin-user-info'>

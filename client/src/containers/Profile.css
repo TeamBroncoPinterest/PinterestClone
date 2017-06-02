@@ -10,18 +10,24 @@
   margin: auto;
   display: flex;
   flex-direction: row;
+  margin-top:10px;
 }
 .profile-nav {
   height: 63px;
   width: 100%;
   background: rgba(255, 255, 255, 0.95);
   position: fixed;
-  display: flex;
+  display: inline-block;
   align-items: center;
 
 }
 .profile-nut {
   height: 26px;
+}
+
+.profile-share {
+  height: 38px;
+  width: 32px;
 }
 .profile-dotdotdot {
   width: 26px;
@@ -29,11 +35,17 @@
 .profile-icon {
   height: 48px;
   width: 48px;
-  padding: 0px 8px;
+  /*padding: 0px 8px;*/
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
+.profile-icon:hover {
+  background-color: #efefef;
+  border-radius: 40px;
+}
+
 .profile-profile-info {
   margin-top: 69px;
 }
@@ -118,6 +130,13 @@
 @media (min-width: 975px) {
   .profile-boards-pins {
     width: 975px;
+  }
+}
+
+@media (min-width: 1180px) {
+  .profile-name h3 {
+    font-weight: bold;
+    font-size: 48px;
   }
 }
 

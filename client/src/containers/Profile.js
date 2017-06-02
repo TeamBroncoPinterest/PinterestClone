@@ -10,6 +10,7 @@ import UpdateBoard from './updateBoardModal';
 import './Profile.css';
 import nut from '../pics/nut.png';
 import dotdotdot from '../pics/dotdotdot.png';
+import share from '../pics/upload.png';
 import blankProfile from '../pics/bananaLady.jpg';
 import AddBoard from './AddBoard';
 import SinglePin from './SinglePin';
@@ -91,6 +92,22 @@ class Profile extends Component {
             <div className="profile-icon">
               <img className="profile-dotdotdot" src={dotdotdot} alt=""/>
             </div>
+        val.pins = boardPins
+        return <SingleBoard data={val} key={val.name} editBoard={() => this.editBoard()}/>
+    })
+  }
+  return (
+    <div className="profile-container">
+      <div className="profile-nav">
+        <div className="profile-side-margin">
+          <div className="profile-icon">
+            <img className="profile-nut" src={nut} alt=""/>
+          </div>
+          <div className="profile-icon">
+            <img className="profile-share" src={share} alt=""/>
+          </div>
+          <div className="profile-icon">
+            <img className="profile-dotdotdot" src={dotdotdot} alt=""/>
           </div>
         </div>
         <div className="profile-profile-info">

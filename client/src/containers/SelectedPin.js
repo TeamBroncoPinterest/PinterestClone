@@ -63,7 +63,11 @@ class SelectedPin extends Component {
               <p>{data.note}</p>
             </div>
             <div>
+
+            
+
               <button onClick={() => this.toLink(link) } className='selected-pin-info-visit'>Visit</button>
+
             </div>
           </div>
           <div className='selected-pin-user-info'>

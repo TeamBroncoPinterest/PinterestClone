@@ -2,10 +2,27 @@
 p {
   margin: 0;
 }
+
+@keyframes feed-fade {
+  from {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
 .single-pin-shell {
   margin: 0px 2px 30px 2px;
   width: 236px;
   position: relative;
+  animation-name: feed-fade;
+  animation-duration: 3s;
 }
 .single-pin-outer-container {
   background: #FFFFFF;
@@ -77,6 +94,9 @@ p {
   position: absolute;
   right: 0;
   z-index: 6;
+}
+.dimGradient a {
+  text-decoration: none;
 }
 .dimGradient p {
   font-weight: lighter;
